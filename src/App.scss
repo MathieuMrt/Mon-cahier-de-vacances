@@ -1,0 +1,18 @@
+@import "./components/Header/Header.scss";
+@import "./components/Comp1/Comp1.scss";
+@import "./components/Comp2/Comp2.scss";
+@import "./components/Footer/Footer.scss";
+
+$buttonColor: #783c8f;
+$backgroundColor: #4caf50;
+$fontColor: #ff5733;
+$mainTypo: "Arial";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
