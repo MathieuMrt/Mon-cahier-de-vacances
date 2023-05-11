@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
-  width: 100vw;
+  padding: 0 3rem 0 3rem;
+  width: 100%;
   height: 10vh;
   color: white;
 
   .fleche {
     img {
-      height: 8vh;
+      height: 7vh;
       filter: invert(100%);
     }
   }
