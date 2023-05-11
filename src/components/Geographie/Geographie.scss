@@ -102,6 +102,13 @@ display: flex;
     padding: 14px 50px;
     text-decoration: none;
   }
+
+  .hidden {
+    visibility: hidden;
+  }
+  .visible {
+    visibility: visible;
+  }
 }
 
 .reponse-drapeau { 
