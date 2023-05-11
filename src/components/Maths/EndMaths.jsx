@@ -1,3 +1,4 @@
+import React from 'react';
 import crabe from "../../assets/images/crabe.png";
 
 const EndMaths = () => {
