@@ -124,6 +124,6 @@ setCount={setCount}
         </div>
     );
 
-
+        }
 
 export default Geographie;

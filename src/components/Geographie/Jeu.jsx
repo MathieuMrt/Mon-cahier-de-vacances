@@ -55,7 +55,7 @@ console.log(questionsTab[0]);
                 />
             })*/}           
             </div>
-        </div>
+      
     );
 };
 
