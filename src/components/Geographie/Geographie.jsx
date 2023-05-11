@@ -43,7 +43,7 @@ const handleReponses = () =>{
         
         let question = []
         const test = []
-        while(question.length<5){
+        while(question.length<=5){
                 const rand = Math.floor(Math.random() *filtEu.length)
                 
                 if(test.indexOf(filtEu[rand].flag)===-1){
@@ -70,7 +70,7 @@ const handleReponses = () =>{
                 var j = Math.floor( Math.random() * (k + 1) ); //random index
                 [question[i][k],question[i][j]]=[question[i][j],question[i][k]]; // swap
             }
-           console.log(question[i])
+         
             
         }
         
@@ -80,7 +80,7 @@ const handleReponses = () =>{
 
         const questionCap = []
         const testCap = []
-            while(questionCap.length<5){
+            while(questionCap.length<=5){
                 const rand = Math.floor(Math.random() *filtEu.length)
                 
                 if(test.indexOf(filtEu[rand].flag)===-1){
@@ -136,6 +136,7 @@ const handleReponses = () =>{
             questionsTab={questionsTab}
             questionTabCap={questionsTabCap}
 setCount={setCount}
+count={count}
             />:
             <Consigne
             handleGameStart={handleGameStart}          />

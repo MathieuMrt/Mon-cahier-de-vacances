@@ -12,8 +12,9 @@ const handleClick = () => {
     { setClasse("mauvaiseReponse")
     setIsGoodAnswer(false) }
 setClick(true)
-}
 setClickedAnswer(pays);
+}
+
 }
 
 useEffect(() => {  
