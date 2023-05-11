@@ -8,21 +8,28 @@ import { useState } from "react";
 
 const Maths = () => {
 
+    const [visibility, setVisibility] = useState("hidden");
+
     const [count, setCount] = useState(0);
     const [gameStartMath,setgameStartMath]=useState(false);
     const handleGameStartMath = () => {
-      setgameStartMath(true)             
+      setgameStartMath(true);
+      setVisibility("visible");            
     };
 
     const [gameEndMath,setgameEndMath]=useState(false);    
     const handleGameEndMath = () => {
-      count === 10 && setgameEndMath(true);
+      if (count === 10) {
+        setgameEndMath(true);
+        setCount(0);
+        setVisibility("hidden");
+      }
     };
 
 
   return (
     <div className="maths">
-      <Header color="mathsColor" subject="Maths" count={count}/>
+      <Header color="mathsColor" subject="Maths" count={count} visibility={visibility}/>
       <main className="main-page">
       {!gameStartMath && (
         <ConsigneMath handleGameStartMath={handleGameStartMath} />

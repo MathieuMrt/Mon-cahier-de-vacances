@@ -61,7 +61,7 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
             <div className ="question">
                 <h3>{titleMath}</h3>
                 <p>{value1} {calcul} {value2} = </p>
-                <input className= {classeMath} type="text" value={answer} onChange={handleChangeCalc}/>
+                <input className= {`input-answer ${classeMath}`} type="text" value={answer} onChange={handleChangeCalc}/>
                 <div className= "buttons">
                 <button className = "boutonOKJeu" onClick={handleClickOK}>OK</button>
                 <button className = "boutonNextJeu" onClick={handleClickNext}>Suivant</button>
