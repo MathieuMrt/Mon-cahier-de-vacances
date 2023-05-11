@@ -19,10 +19,83 @@ $textFont: "Quicksand", sans-serif;
   list-style: none;
 }
 
-
+.main-page {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 #root {
-    background-color: $backGroundColor;
+  background-color: $backGroundColor;
+}
+
+.Consigne {
+  border-radius: 50px;
+  margin: 0 auto;
+  width: 60%;
+  height: 90%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  &_text {
+    width: 80%;
+    margin: 0 auto;
+    background-color: $white;
+    text-align: center;
+  }
+
+  &_h2 {
+    background-color: $white;
+    font-family: $textFont;
+    font-size: 1.8rem;
+  }
+
+  &_p {
+    background-color: $white;
+    font-family: $textFont;
+    font-size: 1.5rem;
+  }
+
+  &_img {
+    background-color: $white;
+    position: absolute;
+    right: 22%;
+    top: 20%;
+    width: 10%;
+  }
+
+  &_button {
+    background-color: $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+
+  &_container_buttons_endPage {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &_button_retourHome {
+    background-color: $white;
+    border: solid 2px $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: $geoColor;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
 }
 
 @import "./components/HomePage/HomePage.scss";

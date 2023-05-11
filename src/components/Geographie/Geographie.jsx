@@ -1,4 +1,5 @@
 
+
 import React,{useState,useEffect} from 'react';
 
 import Header from '../Header/Header.jsx';
@@ -9,12 +10,13 @@ import ReponseDrapeau from './ReponseDrapeau.jsx';
 import End from './End.jsx';
 import Jeu from './Jeu.jsx';
 
-
 const Geographie = () => {
 
+const [count, setCount] = useState(0);
     const [apays,setApays]=useState(undefined)
     const [questionsTab,setQuestionsTab]=useState([])
     const [questionsTabCap,setQuestionsTabCap]=useState([])
+    const [gameStart,setgameStart]=useState(false)
 
     
     useEffect (()=>{
@@ -26,11 +28,12 @@ const Geographie = () => {
   
         }
         fetchData()
-        }
-       
+        }  
 
 
-    ,[])    
+    ,[]) 
+    
+    
 const handleReponses = () =>{
         if (apays) { 
         const filtEu =apays.filter(((e)=>e.continents[0]==='Europe' && e.population>2000000))
@@ -72,8 +75,7 @@ const handleReponses = () =>{
         }
         
         setQuestionsTab(question)            
-        console.log (questionsTab)
-
+       
 
 
         const questionCap = []
@@ -112,31 +114,40 @@ const handleReponses = () =>{
 
         setQuestionsTabCap(questionCap)            
 
-        
-        
-            console.log(questionsTabCap)
-            console.log(questionsTab    )
         }
       
         }
-    
-    
- 
-
-
 
     
 
 
-
+        const handleGameStart = () => {
+          handleReponses()  
+          setgameStart(true)     
+                     
+        }
+  
     return (
         <div className="geographie">
-            <Header/>
-            <button onClick={handleReponses}>CLIIIIIIIIIICK</button>
-            <Footer/>
-
+          <Header color="geoColor" subject="Géographie" count={count}/>  
+ <main className="main-page">
+           {gameStart? 
+            <Jeu
+            questionsTab={questionsTab}
+            questionTabCap={questionsTabCap}
+setCount={setCount}
+            />:
+            <Consigne
+            handleGameStart={handleGameStart}          />
+           }
+           </main>   
+             
+            <Footer color="geoColor"/>           
+                   
+       
         </div>
     );
-};
+
+        }
 
 export default Geographie;
