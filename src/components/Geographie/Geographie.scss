@@ -1,6 +1,8 @@
+
 .geographie {
   height: 100vh;
 }
+
 
 .Consigne {
   border-radius: 50px;
@@ -69,20 +71,30 @@
     text-decoration: none;
   }
 }
+.jeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+.questionBox {
+display: flex;
+  justify-content: center;
+  }}
 
-.reponse-drapeau {
-  text-align: center;
-  padding-top: 50px;
+.reponse-drapeau { 
+text-align: center;
+padding-top: 50px;
 
-  .drapeau {
-    cursor: pointer;
-    font-size: 8em;
-    border-radius: 15px;
-    padding: 0px 40px;
-  }
-  .bonneReponse {
-    border: 1px solid green;
-  }
+
+.drapeau {       
+        cursor: pointer;
+        font-size: 4em;
+        border-radius: 15px;
+        padding: 0px 40px;
+    }
+    .bonneReponse {
+border: 1px solid green;
+    }
+
 
   .mauvaiseReponse {
     border: 1px solid red;

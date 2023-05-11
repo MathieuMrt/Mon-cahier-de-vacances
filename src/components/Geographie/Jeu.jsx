@@ -3,7 +3,9 @@ import {useState, useEffect} from 'react';
 import ReponseDrapeau from './ReponseDrapeau.jsx';
 import ReponseCapitale from './ReponseCapitale.jsx';
 
-const Jeu = ({setCount}) => {
+const Jeu = ({questionTabCap, questionsTab, setCount}) => {
+  const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
+
 
     const [click, setClick] = useState(false)
 
@@ -13,11 +15,10 @@ const Jeu = ({setCount}) => {
     {drapeau:"🇲🇿",bonneReponse:false},
     ]
     
-    const questionCapitaleTest = [{capitale:"Paris",bonneReponse:false},
-    {capitale:"Madrid",bonneReponse:true},
-    {capitale:"Londres",bonneReponse:false},
-    {capitale:"Berline",bonneReponse:false},
-    ]
+    const questionDrapeau = questionsTab[0]
+console.log(questionsTab[0]);
+
+
 
     const handleClick = function (e ) {
         e.preventDefault()
@@ -25,30 +26,34 @@ const Jeu = ({setCount}) => {
     }
 
     return (
-        <div>
-            <div className="drapeau">
-                <h3>Quel est le drapeau de ce pays ?</h3>
-               {questionDrapeauTest.map((el)=>{
+        <div className='jeu'>  
+            <div className="questionDrapeau"></div>
+            {questionIsDrapeau &&  
+            <>
+            <p>Quel est le drapeau de ce pays ?</p>
+            <div className="questionBox">
+               {questionDrapeau.map((el)=>{
+
                 return <ReponseDrapeau
+                key={el.drapeau}
                 drapeau={el.drapeau}
-                bonneReponse={el.bonneReponse} 
+                bonneReponse={el.bonnereponse} 
                 click={click}        
                 setClick={setClick}
-                />
-            }) }
-            <button>Suivant</button>
+                />                
+            })}
             </div>
-            <div className="capitale">
-                <h3>Et maintenant, trouve sa capitale !</h3>
-               {questionCapitaleTest.map((el)=>{
+            </>   
+            }
+               {/* {questionCapitaleTest.map((el)=>{
+
                 return <ReponseCapitale
                 capitale={el.capitale}
                 bonneReponse={el.bonneReponse} 
                 click={click}        
                 setClick={setClick}
                 />
-            })}
-            <button onClick={handleClick}>Suivant</button>
+            })*/}           
             </div>
         </div>
     );
