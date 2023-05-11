@@ -1,24 +1,31 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 
-const ReponseCapitale = ({capitale,bonneReponse,click,setClick}) => {
+const ReponseCapitale = ({capitale,bonneReponse,click,setClick,setIsGoodAnswer,setClickedAnswer, pays}) => {
     const [classe, setClasse] = useState("")
     
-        const handleClick = () => {
+    const handleClick = () => {
         if(!click) {
-       !bonneReponse && setClasse("mauvaiseReponse")  
+       if(!bonneReponse)
+        { setClasse("mauvaiseReponse")
+        setIsGoodAnswer(false) }
     setClick(true)
-    }
+    setClickedAnswer(`${capitale}: ${pays}`); 
+   }
+    
     }
     
     useEffect(() => {  
-       if(click) bonneReponse && setClasse("bonneReponse")
+       if(click){    
+        bonneReponse && setClasse("bonneReponse")
+    } 
+      
       }, [click]);
 
     return (
-        <div className = "reponse-capitale">
-           <span className={`Capitale ${classe}`} onClick={handleClick}>{capitale}</span>
-        </div>
+      
+           <button className={`Capitale ${classe}`} onClick={handleClick}>{capitale}</button>
+       
     );
 };
 

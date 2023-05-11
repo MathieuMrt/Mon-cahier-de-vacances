@@ -2,35 +2,50 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import ReponseDrapeau from './ReponseDrapeau.jsx';
 import ReponseCapitale from './ReponseCapitale.jsx';
+import End from './End.jsx';
 
-const Jeu = ({questionTabCap, questionsTab, setCount}) => {
+const Jeu = ({questionTabCap, questionsTab, setCount,count}) => {
   const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
-  const [reponseCorrecte, setReponseCorrecte] = useState({})
+  const [reponseCorrecteDrap, setReponseCorrecteDrap] = useState({})
+  const [reponseCorrecteCap, setReponseCorrecteCap] = useState({})
   const [isGoodAnswer, setIsGoodAnswer] = useState(true)
   const [clickedAnswer, setClickedAnswer] = useState("")
+  const [arrIteration, setarrIteration] = useState(0)
 
 
     const [click, setClick] = useState(false)
 
 
-    const questionCapitale = questionTabCap[0]
-    const questionDrapeau = questionsTab[0]
+    const questionCapitale = questionTabCap[arrIteration]
+    const questionDrapeau = questionsTab[arrIteration]
 
 
 useEffect (()=>{
-    setReponseCorrecte(questionDrapeau.find(objet => objet.bonnereponse === true))
+    setReponseCorrecteDrap(questionDrapeau.find(objet => objet.bonnereponse === true))
+},[click])
+
+useEffect (()=>{
+    setReponseCorrecteCap(questionCapitale.find(objet => objet.bonnereponse === true))
+},[click])
+
+useEffect (()=>{
+    setCount(count+1)
 },[])
 
 
-    const handleClick = function (e ) {
-        e.preventDefault()
-       if(!questionIsDrapeau){ setCount (c => c + 1)  }
-        setQuestionIsDrapeau(false) 
-        setClick(false)     
+    const handleClick = function () {        
+       if(!questionIsDrapeau){ setarrIteration(arrIteration+1)  }
+       setCount (c => c + 1)
+        setQuestionIsDrapeau(!questionIsDrapeau) 
+        setClick(!click)
+        setIsGoodAnswer(true)     
     }
-
+console.log(click);
 
     return (
+        <>
+       {count !== 11 &&       
+       
         <div className='jeu'>  
         {questionIsDrapeau &&
          <>
@@ -38,16 +53,16 @@ useEffect (()=>{
             {!click &&  
             <>
             <p>Clique sur le drapeau de ce pays :</p>
-            <p className='Pays'>{reponseCorrecte.pays}</p>
+            <p className='Pays'>{reponseCorrecteDrap.pays}</p>
             </> }
             {click && isGoodAnswer && 
              <>
              <p>Bravo ! C'était bien :</p>
-             <p className='Pays'>{reponseCorrecte.pays}</p>            
+             <p className='Pays'>{reponseCorrecteDrap.pays}</p>            
              </> }
              {click && !isGoodAnswer && 
               <>
-              <p>Dommage ! Tu as confondu avec :</p>
+              <p>Dommage ! Tu as confondu :</p>
               <p className='Pays'>{clickedAnswer}</p>            
               </> }
             <div className="questionBox">
@@ -69,18 +84,43 @@ useEffect (()=>{
             <button className={`boutonSuivantJeu ${click? "visible":"hidden"}`} onClick={handleClick}>Suivant</button>  
             </>}
             {!questionIsDrapeau &&
-         <>            
+         <> 
+          {!click &&  
+         <>
+            <p>Quelle est la capitale de ce pays :</p>
+            <p className='Pays'>{reponseCorrecteCap.pays}</p>
+            </> }
+            {click &&  isGoodAnswer &&
+         <>
+            <p>Bravo, c'est bien</p>
+            <p className='Pays'>{reponseCorrecteCap.capitale}</p>
+            </> }
+            {click && !isGoodAnswer && 
+              <>
+              <p>Dommage ! Tu as confondu avec :</p>
+              <p className='Pays'>{clickedAnswer}</p>            
+              </> }
+         <div className="reponse-capitale">
                 {questionCapitale.map((el)=>{
                 return <ReponseCapitale
+                key={el.capitale}
                 capitale={el.capitale}
-                bonneReponse={el.bonneReponse} 
+                bonneReponse={el.bonnereponse} 
+                pays={el.pays} 
                 click={click}        
                 setClick={setClick}
+                setIsGoodAnswer={setIsGoodAnswer}
+                setClickedAnswer={setClickedAnswer}
                 />
             })}
+            </div> 
+            <button className={`boutonSuivantJeu ${click? "visible":"hidden"}`} onClick={handleClick}>Suivant</button>        
             </>}        
-            </div>
-      
+            </div> 
+             }
+             {count > 10 &&   <End/>         }
+             </>        
+        
     );
 };
 
