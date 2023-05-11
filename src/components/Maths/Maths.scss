@@ -23,13 +23,14 @@
 
  .jeu-maths {
 
-        .hidden {
-        display:none;
-        }
-    
-        .visible {
-        display:block;
-        }
+    font-family: $textFont;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
         
         .bonneReponse {
             border: 1px solid green;
@@ -37,6 +38,17 @@
 
         .mauvaiseReponse {
             border: 1px solid red;
+        }
+
+        .boutonNextJeu, .boutonOKJeu{
+            background-color: $mathsColor;
+            border-radius: 35px;
+            display: inline-block;
+            color: #ffffff;
+            font-family: $titleFont;
+            font-size: 1.8rem;
+            padding: 14px 50px;
+            text-decoration: none;
         }
     }
  }
