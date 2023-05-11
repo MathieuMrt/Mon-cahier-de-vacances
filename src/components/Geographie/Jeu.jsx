@@ -27,7 +27,7 @@ useEffect (()=>{
 
     const handleClick = function (e ) {
         e.preventDefault()
-        setCount (c => c + 1)
+        setCount (c => c + 1)        
     }
 
     return (

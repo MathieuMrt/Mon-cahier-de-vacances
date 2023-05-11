@@ -53,14 +53,15 @@ padding-top: 50px;
         font-size: 8em;
         border-radius: 15px;
         padding: 0px 40px;
+        background-color: $backGroundColor;
     }
     .bonneReponse {
-border: 1px solid green;
+border: 5px solid green;
     }
 
 
   .mauvaiseReponse {
-    border: 1px solid red;
+    border: 5px solid red;
   }
 
 
