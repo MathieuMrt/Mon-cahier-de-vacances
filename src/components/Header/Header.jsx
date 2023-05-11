@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const Header = ({color}) => {
+const Header = ({color, subject}) => {
 
     const navigate = useNavigate();
 
@@ -11,8 +11,8 @@ const Header = ({color}) => {
             <div className="fleche">
                 <img src="./../src/assets/images/fleche-retour.png" alt="fleche" onClick={() => navigate(-1)}/>
             </div>
-            <div className ="matiere">
-                <h2>Géographie</h2>
+            <div className ="subject">
+                <h2>{subject}</h2>
             </div>
             <div className = "nombre-questions">
                 <h2>2/10</h2>

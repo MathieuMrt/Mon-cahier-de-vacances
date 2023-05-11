@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer.jsx';
 const Anglais = ({color}) => {
     return (
         <div className="anglais">
-            <Header color="anglaisColor"/>
+            <Header color="anglaisColor" subject="Anglais"/>
             <Footer color="anglaisColor"/>
         </div>
     );
