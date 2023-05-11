@@ -6,6 +6,7 @@ const ConsigneFr = ({ setCount, count }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClickisClicked = () => {
+    setCount (c => c + 1)
     setIsClicked(true);
   };
 

@@ -5,7 +5,7 @@ import ConsigneFr from './ConsigneFr.jsx';
 
 const Francais = () => {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
     return (
         <div className="francais">
             <Header color="francaisColor" subject="Français" count={count}/>
