@@ -6,17 +6,17 @@ import Consigne from './Consigne.jsx';
 import ReponseDrapeau from './ReponseDrapeau.jsx';
 import End from './End.jsx';
 import Jeu from './Jeu.jsx';
-
+import { useState } from "react";
 
 const Geographie = () => {
 
+    const [count, setCount] = useState(0);
 
     return (
         <div className="geographie">
 
-            <Header color="geoColor" subject="Géographie"/>    
-            <Consigne />     
-            <Jeu />             
+            <Header color="geoColor" subject="Géographie" count={count}/>        
+            <Jeu setCount={setCount}/>             
             <Footer color="geoColor"/>
 
         </div>

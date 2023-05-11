@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const Header = ({color, subject}) => {
+const Header = ({color, subject, count}) => {
 
     const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Header = ({color, subject}) => {
                 <h2>{subject}</h2>
             </div>
             <div className = "nombre-questions">
-                <h2>2/10</h2>
+                <h2>{count}/10</h2>
             </div>
         </div>
     );

@@ -1,7 +1,9 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import ReponseDrapeau from './ReponseDrapeau.jsx';
+import ReponseCapitale from './ReponseCapitale.jsx';
 
-const Jeu = () => {
+const Jeu = ({setCount}) => {
 
     const [click, setClick] = useState(false)
 
@@ -17,24 +19,37 @@ const Jeu = () => {
     {capitale:"Berline",bonneReponse:false},
     ]
 
+    const handleClick = function (e ) {
+        e.preventDefault()
+        setCount (c => c + 1)
+    }
+
     return (
         <div>
-               {/* {questionDrapeauTest.map((el)=>{
+            <div className="drapeau">
+                <h3>Quel est le drapeau de ce pays ?</h3>
+               {questionDrapeauTest.map((el)=>{
                 return <ReponseDrapeau
                 drapeau={el.drapeau}
                 bonneReponse={el.bonneReponse} 
                 click={click}        
                 setClick={setClick}
                 />
-            })} */}
-               {/* {questionCapitaleTest.map((el)=>{
+            }) }
+            <button>Suivant</button>
+            </div>
+            <div className="capitale">
+                <h3>Et maintenant, trouve sa capitale !</h3>
+               {questionCapitaleTest.map((el)=>{
                 return <ReponseCapitale
                 capitale={el.capitale}
                 bonneReponse={el.bonneReponse} 
                 click={click}        
                 setClick={setClick}
                 />
-            })} */}
+            })}
+            <button onClick={handleClick}>Suivant</button>
+            </div>
         </div>
     );
 };
