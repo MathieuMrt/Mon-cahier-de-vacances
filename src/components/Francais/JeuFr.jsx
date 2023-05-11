@@ -5,7 +5,9 @@ import EndFr from "./EndFr";
 
 
 const JeuFr = ({setCount, count}) => {
-
+  const [isValidate,setIsValidate] = useState(false)
+  const [answerClassName, setAnswerClassName] = useState("JeuFr_input_normal")
+const [error, setError] = useState(false)
     const mots = [
         "baleine",
         "parasol",
@@ -20,11 +22,6 @@ const JeuFr = ({setCount, count}) => {
       ];
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState("");
-
-  const handleClickJeuFr = () => {
-    setCount (c => c + 1)
-    setIndex((e) => (e + 1));
-  };
 
   const handleChangeJeuFR = (e) => {
     setValue(e.target.value)
@@ -49,36 +46,55 @@ const JeuFr = ({setCount, count}) => {
     return blendedMots;
   };
 
-  const blendedArray = useMemo(() => {
-    const mots = [
-      "baleine",
-      "parasol",
-      "vacances",
-      "croisière",
-      "barbecue",
-      "catamaran",
-      "randonnée",
-      "escalade",
-      "valise",
-      "paysage",
-    ];
+  const blendedArray = useMemo(() => {  
     return blendLetters(mots);
   }, []);
 
+  const handleClickJeuFr = () => {
+    if (value){
+    if(isValidate) {
+    setCount (c => c + 1)
+    setIndex((e) => (e + 1));
+    setAnswerClassName("JeuFr_input_normal")
+    setValue("")
+  }
+
+  if(!isValidate) {
+    if(value === mots[index]) {
+setAnswerClassName("JeuFr_input_vert")
+    } else {
+      setAnswerClassName("JeuFr_input_rouge")
+    }
+  }
+  setError(false)
+    setIsValidate(!isValidate)
+  } else {setError(true)}
+  };
 
   return (
-    <div className="Consigne">
-        {count !== 11 ?
+    <div className="boiteJeuFr">
+      {error && <p className="error">Tu dois entrer une valeur !</p> }
+      {!isValidate && !error &&
+      <p>Trouve l'anagramme...</p>}
+       {isValidate && value === mots[index] &&<p>Bravo !</p>}
+       {isValidate && value !== mots[index] &&<p>Dommage, la réponse était {mots[index]}</p>}
+      
+      
+        {count !== 11 &&
         <>
       <div className="JeuFr">
-        <img src={coral} alt="coral" className="Consigne_img" />
+        <img src={coral} alt="coral" className="Consigne_img" />        
         <p className="JeuFr_mot">{blendedArray[index]}</p>
         <p className="JeuFr_mot">=</p>
-        <input type="text" className={`${value === mots[index] ? "JeuFr_input_vert" : value === "" ? "JeuFr_input_normal" : "JeuFr_input_rouge"  }`} onChange={handleChangeJeuFR} value={value}></input>
+        <input type="text" className={answerClassName} onChange={handleChangeJeuFR} value={value}></input>
       </div>
-      <button className="Francais_button" onClick={handleClickJeuFr}>
-        Suivant
-      </button></> : <EndFr />}
+      {isValidate &&
+      <button className="Francais_button" onClick={handleClickJeuFr}> Suivant</button> }
+      {!isValidate &&
+      <button className="Francais_button" onClick={handleClickJeuFr}> Valider</button> }        
+       </>}
+      {count === 11 && <EndFr />}
+        
     </div>
   );
 };
