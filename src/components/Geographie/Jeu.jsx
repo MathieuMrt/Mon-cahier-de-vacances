@@ -61,8 +61,8 @@ console.log(click);
              </> }
              {click && !isGoodAnswer && 
               <>
-              <p>Dommage ! Tu as confondu :</p>
-              <p className='Pays'>{clickedAnswer}</p>            
+              <p>Dommage ! Tu as sélectionné :</p>
+              <p className='Pays'>{clickedAnswer} au lieu de {reponseCorrecteDrap.pays}</p>            
               </> }
             <div className="questionBox">
                {questionDrapeau.map((el)=>{

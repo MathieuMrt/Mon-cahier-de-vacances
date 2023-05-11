@@ -5,6 +5,7 @@ import EndFr from "./EndFr";
 
 
 const JeuFr = ({setCount, count}) => {
+  const [isValidate,setIsValidate] = useState(false)
 
     const mots = [
         "baleine",
@@ -20,11 +21,6 @@ const JeuFr = ({setCount, count}) => {
       ];
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState("");
-
-  const handleClickJeuFr = () => {
-    setCount (c => c + 1)
-    setIndex((e) => (e + 1));
-  };
 
   const handleChangeJeuFR = (e) => {
     setValue(e.target.value)
@@ -65,20 +61,32 @@ const JeuFr = ({setCount, count}) => {
     return blendLetters(mots);
   }, []);
 
+  const handleClickJeuFr = () => {
+    if(isValidate) {
+    setCount (c => c + 1)
+    setIndex((e) => (e + 1));
+  }
+    setIsValidate(!isValidate)
+  };
 
   return (
-    <div className="Consigne">
-        {count !== 11 ?
+    <div className="boiteJeuFr">
+      <p>Trouve l'anagramme...</p>
+        {count !== 11 &&
         <>
       <div className="JeuFr">
-        <img src={coral} alt="coral" className="Consigne_img" />
+        <img src={coral} alt="coral" className="Consigne_img" />        
         <p className="JeuFr_mot">{blendedArray[index]}</p>
         <p className="JeuFr_mot">=</p>
         <input type="text" className={`${value === mots[index] ? "JeuFr_input_vert" : value === "" ? "JeuFr_input_normal" : "JeuFr_input_rouge"  }`} onChange={handleChangeJeuFR} value={value}></input>
       </div>
-      <button className="Francais_button" onClick={handleClickJeuFr}>
-        Suivant
-      </button></> : <EndFr />}
+      {isValidate &&
+      <button className="Francais_button" onClick={handleClickJeuFr}> Suivant</button> }
+      {!isValidate &&
+      <button className="Francais_button" onClick={handleClickJeuFr}> Valider</button> }        
+       </>}
+      {count === 11 && <EndFr />}
+        
     </div>
   );
 };
