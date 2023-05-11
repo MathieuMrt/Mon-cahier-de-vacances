@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
+import ConsigneMaths from './ConsigneMath.jsx';
+import EndMaths from './EndMath.jsx';
 
-const Maths = ({color}) => {
+const Maths = () => {
     return (
         <div className="maths">
             <Header color="mathsColor" subject="Maths"/>
+            <EndMaths/>
             <Footer color="mathsColor"/>
         </div>
     );
