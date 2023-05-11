@@ -11,6 +11,7 @@ $titleFont: "Pacifico", cursive;
 $textFont: "Quicksand", sans-serif;
 
 * {
+
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,12 +20,10 @@ $textFont: "Quicksand", sans-serif;
   list-style: none;
 }
 
-#root {
-  background-color: $backGroundColor;
-}
+
 
 #root {
-    background-color: $backGroundColor
+    background-color: $backGroundColor;
 }
 
 @import "./components/HomePage/HomePage.scss";
