@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 
-const JeuMaths = ({setCount}) => {
+const JeuMaths = ({setCount, count, handleGameEndMath}) => {
 
     const [classeMath, setClasseMath] = useState("")
     const [titleMath, setTitleMath] = useState("Quel est le résultat de ce calcul?")
@@ -21,6 +21,7 @@ const JeuMaths = ({setCount}) => {
         setCalcul(randomOperator);
         setClasseMath("");
         setTitleMath("Quel est le résultat de ce calcul?");
+        handleGameEndMath();
     }
 
     const calculator = (a, b, c) => {
@@ -67,6 +68,7 @@ const JeuMaths = ({setCount}) => {
                 </div>
             </div>
         </div>
+        
     );
 };
 
