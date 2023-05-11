@@ -40,7 +40,7 @@ const handleReponses = () =>{
         
         const question = []
         const test = []
-            while(question.length<5){
+        while(question.length<5){
                 const rand = Math.floor(Math.random() *filtEu.length)
                 
                 if(test.indexOf(filtEu[rand].flag)===-1){
@@ -49,7 +49,7 @@ const handleReponses = () =>{
                     test.push(filtEu[rand].flag)
                 }
         question.map((e,i)=>{
-                const test2 = []
+                const test2 = [e]
                 while (e.length<4){
                     const rand2 =Math.floor(Math.random() *filtEu.length)
                     if(test2.indexOf(filtEu[rand2].flag)===-1){
@@ -75,7 +75,7 @@ const handleReponses = () =>{
                     testCap.push(filtEu[rand].flag)
                 }
         questionCap.map((e,i)=>{
-                const test2 = []
+                const test2 = [e]
                 while (e.length<4){
                     const rand2 =Math.floor(Math.random() *filtEu.length)
                     if(test2.indexOf(filtEu[rand2].flag)===-1){
