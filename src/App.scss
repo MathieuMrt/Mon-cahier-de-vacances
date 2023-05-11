@@ -43,7 +43,7 @@ $textFont: "Quicksand", sans-serif;
   gap: 6rem;
 
   &_text {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-color: $white;
     text-align: center;
@@ -58,7 +58,7 @@ $textFont: "Quicksand", sans-serif;
   &_p {
     background-color: $white;
     font-family: $textFont;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   &_img {
@@ -96,6 +96,13 @@ $textFont: "Quicksand", sans-serif;
     padding: 14px 50px;
     text-decoration: none;
   }
+
+  &_anagram {
+    font-size: 1.5rem;
+    font-family: $textFont;
+    font-weight: 200;
+    font-style: italic
+  } 
 }
 
 @import "./components/HomePage/HomePage.scss";

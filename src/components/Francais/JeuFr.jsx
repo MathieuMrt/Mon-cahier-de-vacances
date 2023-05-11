@@ -68,7 +68,7 @@ const JeuFr = ({setCount, count}) => {
 
   return (
     <div className="Consigne">
-        {count !== 10 ?
+        {count !== 11 ?
         <>
       <div className="JeuFr">
         <img src={coral} alt="coral" className="Consigne_img" />

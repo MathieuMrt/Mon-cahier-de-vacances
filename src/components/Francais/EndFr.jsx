@@ -11,8 +11,7 @@ const EndFr = () => {
         <p className="Consigne_p">Tu as fini le parcours Français !</p>
       </div>
       <div className="Consigne_container_buttons_endPage">
-        <button className="Francais_button_retourHome">Accueil</button>
-        <button className="Francais_button">Suivant</button>
+        <button className="Francais_button">Accueil</button>
       </div>
     </div>
   );
