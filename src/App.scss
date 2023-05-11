@@ -6,6 +6,7 @@ $mathsColor: #FF3131;
 $anglaisColor: #5CE1E6;
 $backGroundColor: #FDF4E7;
 $titleColor: #FA8E78;
+$white: #FFFFFF;
 $titleFont: 'Pacifico', cursive;
 $textFont: 'Quicksand', sans-serif;
 
@@ -17,6 +18,7 @@ $textFont: 'Quicksand', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    background-color: $backGroundColor
 }
 
 @import "./components/HomePage/HomePage.scss";
