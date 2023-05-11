@@ -1,20 +1,14 @@
+
 .geographie {
   height: 100vh;
 }
+
 
 .reponse-drapeau {
   text-align: center;
   padding-top: 50px;
 
-  .drapeau {
-    cursor: pointer;
-    font-size: 8em;
-    border-radius: 15px;
-    padding: 0px 40px;
-  }
-  .bonneReponse {
-    border: 1px solid green;
-  }
+
 
   .mauvaiseReponse {
     border: 1px solid red;
