@@ -8,7 +8,6 @@ import ReponseCapitale from './ReponseCapitale.jsx';
 import ReponseDrapeau from './ReponseDrapeau.jsx';
 import End from './End.jsx';
 import Jeu from './Jeu.jsx';
-import { useState } from "react";
 
 const Geographie = () => {
 
