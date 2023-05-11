@@ -10,6 +10,7 @@ const Geographie = () => {
     return (
         <div className="geographie">
             <Header/>
+            <h1>blabla</h1>
             <Footer/>
         </div>
     );
