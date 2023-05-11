@@ -1,5 +1,3 @@
-.geographie {
-}
 
 .Consigne {
   border-radius: 50px;
@@ -69,8 +67,16 @@
 
     }
 }
+.jeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+.questionBox {
+display: flex;
+justify-content: center;
 
-
+}
+}
 .reponse-drapeau { 
 text-align: center;
 padding-top: 50px;
@@ -78,7 +84,7 @@ padding-top: 50px;
 
 .drapeau {       
         cursor: pointer;
-        font-size: 8em;
+        font-size: 4em;
         border-radius: 15px;
         padding: 0px 40px;
     }

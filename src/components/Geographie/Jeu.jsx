@@ -1,7 +1,11 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import ReponseCapitale from './ReponseCapitale';
+import ReponseDrapeau from './ReponseDrapeau';
 
-const Jeu = () => {
+const Jeu = ({questionTabCap, questionsTab}) => {
+
+    const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
 
     const [click, setClick] = useState(false)
 
@@ -11,22 +15,30 @@ const Jeu = () => {
     {drapeau:"🇲🇿",bonneReponse:false},
     ]
     
-    const questionCapitaleTest = [{capitale:"Paris",bonneReponse:false},
-    {capitale:"Madrid",bonneReponse:true},
-    {capitale:"Londres",bonneReponse:false},
-    {capitale:"Berline",bonneReponse:false},
-    ]
+    const questionDrapeau = questionsTab[0]
+console.log(questionsTab[0]);
+
+
 
     return (
-        <div>
-               {/* {questionDrapeauTest.map((el)=>{
+        <div className='jeu'>  
+            <div className="questionDrapeau"></div>
+            {questionIsDrapeau &&  
+            <>
+            <p>Quel est le drapeau de ce pays ?</p>
+            <div className="questionBox">
+               {questionDrapeau.map((el)=>{
                 return <ReponseDrapeau
+                key={el.drapeau}
                 drapeau={el.drapeau}
-                bonneReponse={el.bonneReponse} 
+                bonneReponse={el.bonnereponse} 
                 click={click}        
                 setClick={setClick}
-                />
-            })} */}
+                />                
+            })}
+            </div>
+            </>   
+            }
                {/* {questionCapitaleTest.map((el)=>{
                 return <ReponseCapitale
                 capitale={el.capitale}
