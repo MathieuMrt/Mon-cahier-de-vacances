@@ -1,28 +1,36 @@
 import React from "react";
 import coral from "../../assets/images/coral.png";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import EndFr from "./EndFr";
 
-const JeuFr = () => {
-  const mots = [
-    "baleine",
-    "parasol",
-    "vacances",
-    "croisière",
-    "barbecue",
-    "catamaran",
-    "randonnée",
-    "escalade",
-    "valise",
-    "paysage",
-  ];
+
+const JeuFr = ({setCount, count}) => {
+
+    const mots = [
+        "baleine",
+        "parasol",
+        "vacances",
+        "croisière",
+        "barbecue",
+        "catamaran",
+        "randonnée",
+        "escalade",
+        "valise",
+        "paysage",
+      ];
   const [index, setIndex] = useState(0);
+  const [value, setValue] = useState("");
 
   const handleClickJeuFr = () => {
-    console.log("lol");
-    setIndex((e) => (e + 1) % blendedArray.length);
+    setCount (c => c + 1)
+    setIndex((e) => (e + 1));
   };
 
-  console.log(mots[0]);
+  const handleChangeJeuFR = (e) => {
+    setValue(e.target.value)
+  }
+
+
 
   const blendLetters = (mots) => {
     var blendedMots = mots.map((mot) => {
@@ -40,19 +48,36 @@ const JeuFr = () => {
     });
     return blendedMots;
   };
-  const blendedArray = blendLetters(mots);
-  console.log(blendedArray);
+
+  const blendedArray = useMemo(() => {
+    const mots = [
+      "baleine",
+      "parasol",
+      "vacances",
+      "croisière",
+      "barbecue",
+      "catamaran",
+      "randonnée",
+      "escalade",
+      "valise",
+      "paysage",
+    ];
+    return blendLetters(mots);
+  }, []);
+
 
   return (
     <div className="Consigne">
+        {count !== 10 ?
+        <>
       <div className="JeuFr">
         <img src={coral} alt="coral" className="Consigne_img" />
         <p className="JeuFr_mot">{blendedArray[index]}</p>
-        <input type="text" className="JeuFr_input"></input>
+        <input type="text" className={`${value === mots[index] ? "JeuFr_input_vert" : "JeuFr_input_rouge"  }`} onChange={handleChangeJeuFR} value={value}></input>
       </div>
       <button className="Francais_button" onClick={handleClickJeuFr}>
         Suivant
-      </button>
+      </button></> : <EndFr />}
     </div>
   );
 };
