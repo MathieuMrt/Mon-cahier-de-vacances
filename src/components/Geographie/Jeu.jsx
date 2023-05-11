@@ -30,7 +30,8 @@ console.log(questionsTab[0]);
             <div className="questionDrapeau"></div>
             {questionIsDrapeau &&  
             <>
-            <p>Quel est le drapeau de ce pays ?</p>
+            <p>Clique sur le drapeau de ce pays :</p>
+            <p className='Pays'>FRANCE</p>
             <div className="questionBox">
                {questionDrapeau.map((el)=>{
 
@@ -40,9 +41,10 @@ console.log(questionsTab[0]);
                 bonneReponse={el.bonnereponse} 
                 click={click}        
                 setClick={setClick}
-                />                
-            })}
+                />                   
+            })}                     
             </div>
+            <button className='boutonSuivantJeu'>Suivant</button>  
             </>   
             }
                {/* {questionCapitaleTest.map((el)=>{
