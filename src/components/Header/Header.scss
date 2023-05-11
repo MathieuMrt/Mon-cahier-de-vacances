@@ -5,9 +5,7 @@
     padding: 3rem;
     width: 100vw;
     height: 11vh;
-    background-color: $geoColor;
     color: white;
-    
 
         .fleche {
             img {
@@ -31,4 +29,20 @@
             }
         }
 
+}
+
+.geoColor {
+    background: $geoColor;
+}
+
+.francaisColor {
+    background: $francaisColor;
+}
+
+.mathsColor {
+    background: $mathsColor;
+}
+
+.anglaisColor {
+    background: $anglaisColor;
 }

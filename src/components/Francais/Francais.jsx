@@ -2,11 +2,11 @@ import React from 'react';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 
-const Francais = () => {
+const Francais = ({color}) => {
     return (
         <div className="francais">
-            <Header/>
-            <Footer/>
+            <Header color="francaisColor"/>
+            <Footer color="francaisColor"/>
         </div>
     );
 };

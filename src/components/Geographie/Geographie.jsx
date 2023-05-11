@@ -9,9 +9,9 @@ import End from './End.jsx';
 const Geographie = () => {
     return (
         <div className="geographie">
-            <Header/>
+            <Header color="geoColor"/>
             <h1>blabla</h1>
-            <Footer/>
+            <Footer color="geoColor"/>
         </div>
     );
 };
