@@ -1,4 +1,4 @@
-.Maths {
+.maths {
     &_button {
         background-color: $mathsColor;
         border-radius: 35px;
@@ -21,11 +21,22 @@
         text-decoration:none;
  }
 
- .hidden {
-    display:none;
- }
+ .jeu-maths {
 
- .visible {
-    display:block;
+        .hidden {
+        display:none;
+        }
+    
+        .visible {
+        display:block;
+        }
+        
+        .bonneReponse {
+            border: 1px solid green;
+        }
+
+        .mauvaiseReponse {
+            border: 1px solid red;
+        }
+    }
  }
-}
