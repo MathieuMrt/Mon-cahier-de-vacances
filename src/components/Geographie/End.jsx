@@ -1,8 +1,10 @@
 import sun from '../../assets/images/sun.png'
+import { useNavigate } from "react-router-dom";
 
 const End = () => {
+    const navigate = useNavigate();
     return (
-        <div className = "end">
+        
             <div className="Consigne">
             <img src={sun} alt="sun" className='Consigne_img'/>
             <div className='Consigne_text'>
@@ -10,11 +12,9 @@ const End = () => {
             <p className='Consigne_p'>Tu as fini le parcours Géographie !</p>
             </div>
             <div className='Consigne_container_buttons_endPage'>
-            <button className='Consigne_button_retourHome'>Accueil</button>
-            <button className='Consigne_button'>Suivant</button>
-            
+            <button className='Consigne_button_retourHome' onClick={() => navigate("/")}>Accueil</button>                       
             </div>
-        </div>
+       
         </div>
     );
 };

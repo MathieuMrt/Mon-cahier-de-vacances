@@ -48,8 +48,7 @@ console.log(click);
        
         <div className='jeu'>  
         {questionIsDrapeau &&
-         <>
-            <div className="questionDrapeau"></div>
+         <>           
             {!click &&  
             <>
             <p>Clique sur le drapeau de ce pays :</p>
