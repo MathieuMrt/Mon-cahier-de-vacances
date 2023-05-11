@@ -2,9 +2,62 @@
 
 }
 
-.consigne {
+.Consigne {
+    border-radius: 8%;
+    margin: 5em auto;
+    width: 60%;
+    height:75vh;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+
+    &_text {
+        width: 80%;
+        margin: 0 auto;
+        background-color: $white;
+        margin-top: 30%;
+        text-align: center;
+
+    }
+
+    &_h2 {
+        background-color: $white;
+        font-family: $textFont;
+        font-size: 1.8rem;
+       
+    }
+
+    &_p {
+        background-color: $white;
+        font-family: $textFont;
+        font-size: 1.5rem;
+       
+    }
+
+    &_img {
+        background-color: $white;
+        position: absolute;
+        right: 22%;
+        top: 10%;
+        width: 10%;
+    }
+        
+    &_button {
+        background-color:$geoColor;
+        border-radius:35px;
+        display:inline-block;
+        color:#ffffff;
+        font-family:$titleFont;
+        font-size:1.8rem;
+        padding:14px 50px;
+        text-decoration:none;
+
+    }
     
 }
+
 
 .reponse-drapeau { 
 text-align: center;
@@ -22,7 +75,6 @@ border: 1px solid green;
 .mauvaiseReponse {
     border: 1px solid red;
 }
-
 }
 
 .reponse-capitale {
