@@ -1,12 +1,17 @@
+
 import React,{useState,useEffect} from 'react';
+
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Consigne from './Consigne.jsx';
 import ReponseCapitale from './ReponseCapitale.jsx';
 import ReponseDrapeau from './ReponseDrapeau.jsx';
 import End from './End.jsx';
+import Jeu from './Jeu.jsx';
+
 
 const Geographie = () => {
+
     const [apays,setApays]=useState(undefined)
     const [questionsTab,setQuestionsTab]=useState([])
     const [questionsTabCap,setQuestionsTabCap]=useState([])
@@ -103,6 +108,7 @@ const handleReponses = () =>{
             <Header/>
             <button onClick={handleReponses}>CLIIIIIIIIIICK</button>
             <Footer/>
+
         </div>
     );
 };

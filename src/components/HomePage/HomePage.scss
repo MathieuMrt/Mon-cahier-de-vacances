@@ -1,3 +1,93 @@
 .home {
-    
+  width: 100vw;
+  height: 100vh;
+
+  .titre {
+    position: absolute;
+    font-family: $titleFont;
+    color: $titleColor;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 25px;
+    width: 50%;
+    height: 40%;
+    left: 10%;
+    top: 10%;
+  }
+
+  .start-texte {
+    position: absolute;
+    font-family: $textFont;
+    font-size: 2.5rem;
+    left: 14%;
+    top: 60%;
+  }
+
+  a {
+    color: white;
+  }
+
+  .navbar-button {
+    position: absolute;
+    font-family: $titleFont;
+    font-size: 2.5rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 10%;
+    gap: 25px;
+    left: 10%;
+    top: 70%;
+  }
+
+  .geographie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $geoColor;
+  }
+
+  .français {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $francaisColor;
+  }
+
+  .maths {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $mathsColor;
+  }
+
+  .anglais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    background-color: $anglaisColor;
+  }
+
+  .image-crabe {
+    position: absolute;
+    width: 15%;
+    left: 75%;
+    bottom: 70%;
+  }
+
+  .image-vague {
+    position: absolute;
+    width: 55%;
+    bottom: 0;
+    right: 0;
+  }
 }

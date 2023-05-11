@@ -7,9 +7,7 @@ import Maths from "./components/Maths/Maths.jsx"
 import Anglais from "./components/Anglais/Anglais.jsx"
 
 
-
 function App() {
-
 
   return (
     <>
@@ -19,7 +17,7 @@ function App() {
         <Route path="/geographie" element={<Geographie/>} />
         <Route path="/francais" element={<Francais/>} />
         <Route path="/maths" element={<Maths/>} />
-        <Route path="/anglais" element={<Anglais/>} />
+        <Route path="/anglais" element={<Anglais/>}/>
       </Routes>
     </Router>
     </>
