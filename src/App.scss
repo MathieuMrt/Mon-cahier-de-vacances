@@ -26,6 +26,10 @@ $textFont: "Quicksand", sans-serif;
   align-items: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 #root {
   background-color: $backGroundColor;
 }
