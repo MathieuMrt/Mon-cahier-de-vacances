@@ -30,21 +30,25 @@
     display : flex;
     margin-top: 25%;
     width: 100%;
-    gap: 20%;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 10%;
     &_mot{
         font-size: 2.5rem;
         font-family: $textFont;
     }
 
+    &_input_normal {
+        border: solid 1px black;
+        width: 30%;
+    }
+
     &_input_vert {
         border: solid 3px $francaisColor;
-        width: 20%;
+        width: 30%;
     }
     &_input_rouge {
         border: solid 3px red;
-        width: 20%;
+        width: 30%;
     }
 
     input:focus{

@@ -68,12 +68,13 @@ const JeuFr = ({setCount, count}) => {
 
   return (
     <div className="Consigne">
-        {count !== 10 ?
+        {count !== 11 ?
         <>
       <div className="JeuFr">
         <img src={coral} alt="coral" className="Consigne_img" />
         <p className="JeuFr_mot">{blendedArray[index]}</p>
-        <input type="text" className={`${value === mots[index] ? "JeuFr_input_vert" : "JeuFr_input_rouge"  }`} onChange={handleChangeJeuFR} value={value}></input>
+        <p className="JeuFr_mot">=</p>
+        <input type="text" className={`${value === mots[index] ? "JeuFr_input_vert" : value === "" ? "JeuFr_input_normal" : "JeuFr_input_rouge"  }`} onChange={handleChangeJeuFR} value={value}></input>
       </div>
       <button className="Francais_button" onClick={handleClickJeuFr}>
         Suivant

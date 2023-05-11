@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import ConsigneFr from './ConsigneFr.jsx';
-import EndFr from './EndFr.jsx';
-import JeuFr from './JeuFr.jsx';
 
 const Francais = () => {
 
@@ -11,7 +9,7 @@ const Francais = () => {
     return (
         <div className="francais">
             <Header color="francaisColor" subject="Français" count={count}/>
-            <main className="main-page"><JeuFr setCount={setCount} count={count}/></main>
+            <main className="main-page"><ConsigneFr setCount={setCount} count={count}/></main>
             <Footer color="francaisColor"/>
         </div>
     );
