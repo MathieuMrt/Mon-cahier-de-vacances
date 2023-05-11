@@ -36,9 +36,9 @@ const handleReponses = () =>{
         const filtEu =apays.filter(((e)=>e.continents[0]==='Europe' && e.population>2000000))
       
         setApays(filtEu)
-        console.log(filtEu)
+       
         
-        const question = []
+        let question = []
         const test = []
         while(question.length<5){
                 const rand = Math.floor(Math.random() *filtEu.length)
@@ -48,17 +48,29 @@ const handleReponses = () =>{
                 
                     test.push(filtEu[rand].flag)
                 }
-        question.map((e,i)=>{
-                const test2 = [e]
-                while (e.length<4){
-                    const rand2 =Math.floor(Math.random() *filtEu.length)
-                    if(test2.indexOf(filtEu[rand2].flag)===-1){
-                        e.push({bonnereponse : false , drapeau : filtEu[rand2].flag, pays : filtEu[rand2].translations.fra.common})
-                        test2.push(filtEu[rand2].flag)
-                    }
-
-                }
-             })
+        for(let i =0;i<question.length;i++){
+            let test2 = [question[i][0].drapeau]
+            
+            
+            while (question[i].length<4){
+                const rand2 =Math.floor(Math.random() *filtEu.length)
+                
+                 if(test2.indexOf(filtEu[rand2].flag)===-1){
+                 
+                
+                
+                question[i].push({bonnereponse : false , drapeau : filtEu[rand2].flag, pays : filtEu[rand2].translations.fra.common})
+               
+                test2.push(filtEu[rand2].flag)}
+            }
+            for(var k =question[i].length-1 ; k>0 ;k--){
+                var j = Math.floor( Math.random() * (k + 1) ); //random index
+                [question[i][k],question[i][j]]=[question[i][j],question[i][k]]; // swap
+            }
+           console.log(question[i])
+            
+        }
+        
         setQuestionsTab(question)            
         console.log (questionsTab)
 
@@ -70,26 +82,40 @@ const handleReponses = () =>{
                 const rand = Math.floor(Math.random() *filtEu.length)
                 
                 if(test.indexOf(filtEu[rand].flag)===-1){
-                    questionCap.push([{bonnereponse : true, drapeau : filtEu[rand].capital[0], pays : filtEu[rand].translations.fra.common}])}
+                    questionCap.push([{bonnereponse : true, capitale : filtEu[rand].capital[0], pays : filtEu[rand].translations.fra.common}])}
                 
                     testCap.push(filtEu[rand].flag)
                 }
-        questionCap.map((e,i)=>{
-                const test2 = [e]
-                while (e.length<4){
+      
+             for(let i =0;i<questionCap.length;i++){
+                let test2 = [questionCap[i][0].capitale]
+                
+                
+                while (questionCap[i].length<4){
                     const rand2 =Math.floor(Math.random() *filtEu.length)
-                    if(test2.indexOf(filtEu[rand2].flag)===-1){
-                        e.push({bonnereponse : false , drapeau : filtEu[rand2].capital[0], pays : filtEu[rand2].translations.fra.common})
-                        test2.push(filtEu[rand2].flag)
-                    }
-
+                    
+                     if(test2.indexOf(filtEu[rand2].capital[0])===-1){
+                     
+                    
+                    
+                    questionCap[i].push({bonnereponse : false , capitale : filtEu[rand2].capital[0], pays : filtEu[rand2].translations.fra.common})
+                   
+                    test2.push(filtEu[rand2].capital[0])}
                 }
-             })
+                for(var k =questionCap[i].length-1 ; k>0 ;k--){
+                    var j = Math.floor( Math.random() * (k + 1) ); //random index
+                    [questionCap[i][k],questionCap[i][j]]=[questionCap[i][j],questionCap[i][k]]; // swap
+                }
+               
+                
+            }
+
         setQuestionsTabCap(questionCap)            
-        console.log (questionsTabCap)
+
         
         
-   
+            console.log(questionsTabCap)
+            console.log(questionsTab    )
         }
       
         }
