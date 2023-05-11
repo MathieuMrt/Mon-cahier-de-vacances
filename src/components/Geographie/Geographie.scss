@@ -2,7 +2,7 @@
 }
 
 .Consigne {
-  border-radius: 8%;
+  border-radius: 50px;
   margin: 5em auto;
   width: 60%;
   height: 75vh;
@@ -50,13 +50,33 @@
     padding: 14px 50px;
     text-decoration: none;
   }
+  
+    &_container_buttons_endPage {
+        display: flex;
+        gap: 3rem;
+    }
+
+    &_button_retourHome {
+        background-color:$white;
+        border: solid 2px $geoColor;
+        border-radius:35px;
+        display:inline-block;
+        color:$geoColor;
+        font-family:$titleFont;
+        font-size:1.8rem;
+        padding:14px 50px;
+        text-decoration:none;
+
+    }
 }
+
 
 .reponse-drapeau { 
 text-align: center;
 padding-top: 50px;
 
-    .drapeau {       
+
+.drapeau {       
         cursor: pointer;
         font-size: 8em;
         border-radius: 15px;
@@ -65,9 +85,11 @@ padding-top: 50px;
     .bonneReponse {
 border: 1px solid green;
     }
+
 .mauvaiseReponse {
     border: 1px solid red;
-}
+ }
+
 }
 
 .reponse-capitale {
