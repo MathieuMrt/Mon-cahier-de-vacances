@@ -1,2 +1,23 @@
-.maths {
+.Maths {
+    &_button {
+        background-color: $mathsColor;
+        border-radius: 35px;
+        display: inline-block;
+        color: #ffffff;
+        font-family: $titleFont;
+        font-size: 1.8rem;
+        padding: 14px 50px;
+        text-decoration: none;
+    }
+    &_button_retourHome {
+        background-color:$white;
+        border: solid 2px $mathsColor;
+        border-radius:35px;
+        display:inline-block;
+        color:$mathsColor;
+        font-family:$titleFont;
+        font-size:1.8rem;
+        padding:14px 50px;
+        text-decoration:none;
+ }
 }
