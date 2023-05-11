@@ -6,10 +6,43 @@
     
 }
 
-.reponse-drapeau {
+.reponse-drapeau { 
+text-align: center;
+padding-top: 50px;
+
+    .drapeau {       
+        cursor: pointer;
+        font-size: 8em;
+        border-radius: 15px;
+        padding: 0px 40px;
+    }
+    .bonneReponse {
+border: 1px solid green;
+    }
+.mauvaiseReponse {
+    border: 1px solid red;
+}
 
 }
 
 .reponse-capitale {
+    text-align: center;
+padding-top: 50px;
+
+.Capitale {
+    cursor: pointer;
+        font-size: 3em;
+        font-family: $titleFont;
+        border-radius: 20px;
+        padding: 10px 40px;
+        border: 4px solid $geoColor;
+}
+
+.bonneReponse {
+    border: 4px solid green;
+        }
+    .mauvaiseReponse {
+        border: 4px solid red;
+    }
 
 }
