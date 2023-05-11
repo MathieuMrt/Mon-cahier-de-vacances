@@ -1,5 +1,5 @@
 .maths {
-    &_button {
+    .Maths_button {
         background-color: $mathsColor;
         border-radius: 35px;
         display: inline-block;
@@ -9,7 +9,7 @@
         padding: 14px 50px;
         text-decoration: none;
     }
-    &_button_retourHome {
+    .Maths_button_retourHome {
         background-color:$white;
         border: solid 2px $mathsColor;
         border-radius:35px;
@@ -31,6 +31,13 @@
     justify-content: space-around;
     height: 100%;
     width: 100%;
+
+        .input-answer {
+            font-family: $textFont;
+            font-size: 40px;
+            height: 10vh;
+            width: 20vw;
+        }
         
         .bonneReponse {
             border: 1px solid green;
