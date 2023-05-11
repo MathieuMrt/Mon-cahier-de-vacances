@@ -1,47 +1,30 @@
+
 .geographie {
   height: 100vh;
 }
 
-.Consigne {
-  border-radius: 50px;
-  margin: 0 auto;
-  width: 60%;
-  height: 90%;
-  background-color: $white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6rem;
-
-  &_text {
-    width: 80%;
+.jeu {
+    
     margin: 0 auto;
-    background-color: $white;
-    margin-top: 30%;
-    text-align: center;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: space-around;
+    height: 100%; 
+   
+    p {
+        font-family: $textFont;
+        font-size: 4em;        
+    }
+    .Pays {        
+        color: $geoColor;
+    }
 
-  &_h2 {
-    background-color: $white;
-    font-family: $textFont;
-    font-size: 1.8rem;
+.questionBox {
+display: flex;
+  justify-content: center;
   }
-
-  &_p {
-    background-color: $white;
-    font-family: $textFont;
-    font-size: 1.5rem;
-  }
-
-  &_img {
-    background-color: $white;
-    position: absolute;
-    right: 22%;
-    top: 20%;
-    width: 10%;
-  }
-
-  &_button {
+  .boutonSuivantJeu {
     background-color: $geoColor;
     border-radius: 35px;
     display: inline-block;
@@ -52,41 +35,36 @@
     text-decoration: none;
   }
 
-  &_container_buttons_endPage {
-    display: flex;
-    gap: 3rem;
+  .hidden {
+    visibility: hidden;
   }
-
-  &_button_retourHome {
-    background-color: $white;
-    border: solid 2px $geoColor;
-    border-radius: 35px;
-    display: inline-block;
-    color: $geoColor;
-    font-family: $titleFont;
-    font-size: 1.8rem;
-    padding: 14px 50px;
-    text-decoration: none;
+  .visible {
+    visibility: visible;
   }
 }
 
-.reponse-drapeau {
-  text-align: center;
-  padding-top: 50px;
+.reponse-drapeau { 
+text-align: center;
+padding-top: 50px;
 
-  .drapeau {
-    cursor: pointer;
-    font-size: 8em;
-    border-radius: 15px;
-    padding: 0px 40px;
-  }
-  .bonneReponse {
-    border: 1px solid green;
-  }
+
+.drapeau {       
+        cursor: pointer;
+        font-size: 8em;
+        border-radius: 15px;
+        padding: 0px 40px;
+        background-color: $backGroundColor;
+    }
+    .bonneReponse {
+border: 5px solid green;
+    }
+
 
   .mauvaiseReponse {
-    border: 1px solid red;
+    border: 5px solid red;
   }
+
+
 }
 
 .reponse-capitale {
