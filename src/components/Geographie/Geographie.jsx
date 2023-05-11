@@ -1,4 +1,5 @@
 
+
 import React,{useState,useEffect} from 'react';
 
 import Header from '../Header/Header.jsx';
@@ -17,10 +18,11 @@ const Geographie = () => {
         <div className="geographie">
 
             <Header color="geoColor" subject="Géographie" count={count}/>        
-            <Jeu setCount={setCount}/>             
+            <main className="main-page"><Jeu setCount={setCount}/></main>             
             <Footer color="geoColor"/>
         </div>
     );
+
 };
 
 export default Geographie;

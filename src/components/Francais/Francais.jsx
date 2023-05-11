@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -8,10 +9,11 @@ const Francais = () => {
     return (
         <div className="francais">
             <Header color="francaisColor" subject="Français"/>
-            <ConsigneFr />
+            <main className="main-page"><ConsigneFr /></main>
             <Footer color="francaisColor"/>
         </div>
     );
+
 };
 
 export default Francais;
