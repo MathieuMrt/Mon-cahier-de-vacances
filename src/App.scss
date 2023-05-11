@@ -23,6 +23,10 @@ $textFont: "Quicksand", sans-serif;
   background-color: $backGroundColor;
 }
 
+#root {
+    background-color: $backGroundColor
+}
+
 @import "./components/HomePage/HomePage.scss";
 @import "./components/Header/Header.scss";
 @import "./components/Geographie/Geographie.scss";
