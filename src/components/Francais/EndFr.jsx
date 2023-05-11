@@ -1,6 +1,10 @@
 import coral from "../../assets/images/coral.png";
+import { useNavigate } from "react-router-dom";
 
 const EndFr = () => {
+
+const navigate = useNavigate();
+
   return (
     <div className="Consigne">
       <img src={coral} alt="coral" className="Consigne_img" />
@@ -11,8 +15,7 @@ const EndFr = () => {
         <p className="Consigne_p">Tu as fini le parcours Français !</p>
       </div>
       <div className="Consigne_container_buttons_endPage">
-        <button className="Francais_button_retourHome">Accueil</button>
-        <button className="Francais_button">Suivant</button>
+        <button className="Francais_button" onClick={() => navigate(-1)}>Accueil</button>
       </div>
     </div>
   );
