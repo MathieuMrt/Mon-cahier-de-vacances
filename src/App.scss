@@ -19,6 +19,10 @@ $textFont: 'Quicksand', sans-serif;
     list-style: none;
 }
 
+#root {
+    background-color: $backGroundColor
+}
+
 @import "./components/HomePage/HomePage.scss";
 @import "./components/Header/Header.scss";
 @import "./components/Geographie/Geographie.scss";
