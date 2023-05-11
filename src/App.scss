@@ -1,11 +1,4 @@
-@import "./components/HomePage/HomePage.scss";
-@import "./components/Header/Header.scss";
-@import "./components/Geographie/Geographie.scss";
-@import "./components/Francais/Francais.scss";
-@import "./components/Maths/Maths.scss";
-@import "./components/Anglais/Anglais.scss";
-@import "./components/Footer/Footer.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 $geoColor: #FDC817;
 $francaisColor: #7ED957;
@@ -13,6 +6,9 @@ $mathsColor: #FF3131;
 $anglaisColor: #5CE1E6;
 $backGroundColor: #FDF4E7;
 $titleColor: #FA8E78;
+$titleFont: 'Pacifico', cursive;
+$textFont: 'Quicksand', sans-serif;
+
 
 * {
     margin: 0;
@@ -22,3 +18,11 @@ $titleColor: #FA8E78;
     text-decoration: none;
     list-style: none;
 }
+
+@import "./components/HomePage/HomePage.scss";
+@import "./components/Header/Header.scss";
+@import "./components/Geographie/Geographie.scss";
+@import "./components/Francais/Francais.scss";
+@import "./components/Maths/Maths.scss";
+@import "./components/Anglais/Anglais.scss";
+@import "./components/Footer/Footer.scss";

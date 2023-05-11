@@ -6,6 +6,7 @@ const Maths = () => {
     return (
         <div className="maths">
             <Header/>
+            <h1>Coucou Maths</h1>
             <Footer/>
         </div>
     );
