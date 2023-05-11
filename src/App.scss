@@ -1,12 +1,18 @@
+@import "./components/HomePage/HomePage.scss";
 @import "./components/Header/Header.scss";
-@import "./components/Comp1/Comp1.scss";
-@import "./components/Comp2/Comp2.scss";
+@import "./components/Geographie/Geographie.scss";
+@import "./components/Francais/Francais.scss";
+@import "./components/Maths/Maths.scss";
+@import "./components/Anglais/Anglais.scss";
 @import "./components/Footer/Footer.scss";
 
-$buttonColor: #783c8f;
-$backgroundColor: #4caf50;
-$fontColor: #ff5733;
-$mainTypo: "Arial";
+
+$geoColor: #FDC817;
+$francaisColor: #7ED957;
+$mathsColor: #FF3131;
+$anglaisColor: #5CE1E6;
+$backGroundColor: #FDF4E7;
+$titleColor: #FA8E78;
 
 * {
     margin: 0;
