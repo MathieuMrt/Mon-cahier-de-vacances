@@ -3,16 +3,67 @@
   height: 100vh;
 }
 
+.jeu {
+    
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: space-around;
+    height: 100%; 
+   
+    p {
+        font-family: $textFont;
+        font-size: 4em;        
+    }
+    .Pays {        
+        color: $geoColor;
+    }
 
-.reponse-drapeau {
-  text-align: center;
-  padding-top: 50px;
+.questionBox {
+display: flex;
+  justify-content: center;
+  }
+  .boutonSuivantJeu {
+    background-color: $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
 
+  .hidden {
+    visibility: hidden;
+  }
+  .visible {
+    visibility: visible;
+  }
+}
+
+.reponse-drapeau { 
+text-align: center;
+padding-top: 50px;
+
+
+.drapeau {       
+        cursor: pointer;
+        font-size: 8em;
+        border-radius: 15px;
+        padding: 0px 40px;
+    }
+    .bonneReponse {
+border: 1px solid green;
+    }
 
 
   .mauvaiseReponse {
     border: 1px solid red;
   }
+
+
 }
 
 .reponse-capitale {

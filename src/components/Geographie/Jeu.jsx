@@ -5,6 +5,8 @@ import ReponseCapitale from './ReponseCapitale.jsx';
 
 const Jeu = ({questionTabCap, questionsTab, setCount}) => {
   const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
+  const [reponseCorrecte, setReponseCorrecte] = useState({})
+  const [isGoodAnswer, setIsGoodAnswer] = useState(undefined)
 
 
     const [click, setClick] = useState(false)
@@ -18,6 +20,9 @@ const Jeu = ({questionTabCap, questionsTab, setCount}) => {
     const questionDrapeau = questionsTab[0]
 console.log(questionsTab[0]);
 
+useEffect (()=>{
+    setReponseCorrecte(questionDrapeau.find(objet => objet.bonnereponse === true))
+},[])
 
 
     const handleClick = function (e ) {
@@ -28,9 +33,16 @@ console.log(questionsTab[0]);
     return (
         <div className='jeu'>  
             <div className="questionDrapeau"></div>
-            {questionIsDrapeau &&  
+            {questionIsDrapeau && !click &&  
             <>
-            <p>Quel est le drapeau de ce pays ?</p>
+            <p>Clique sur le drapeau de ce pays :</p>
+            <p className='Pays'>{reponseCorrecte.pays}</p>
+            </> }
+            {questionIsDrapeau && click &&  
+            <>
+            <p>Bravo ! C'était bien :</p>
+            <p>{reponseCorrecte.pays}</p>            
+            </> }
             <div className="questionBox">
                {questionDrapeau.map((el)=>{
 
@@ -40,11 +52,13 @@ console.log(questionsTab[0]);
                 bonneReponse={el.bonnereponse} 
                 click={click}        
                 setClick={setClick}
-                />                
-            })}
-            </div>
-            </>   
-            }
+                />                   
+            })}                     
+            </div>          
+            
+            <button className={`boutonSuivantJeu ${click? "visible":"hidden"}`} onClick={handleClick}>Suivant</button>  
+            
+            
                {/* {questionCapitaleTest.map((el)=>{
 
                 return <ReponseCapitale
