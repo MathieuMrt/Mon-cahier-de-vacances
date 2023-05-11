@@ -19,10 +19,14 @@ $textFont: "Quicksand", sans-serif;
   list-style: none;
 }
 
-
+.main-page {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
 
 #root {
-    background-color: $backGroundColor;
+  background-color: $backGroundColor;
 }
 
 @import "./components/HomePage/HomePage.scss";

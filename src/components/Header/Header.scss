@@ -1,48 +1,47 @@
 .header {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem;
-    width: 100vw;
-    height: 11vh;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  width: 100vw;
+  height: 10vh;
+  color: white;
 
-        .fleche {
-            img {
-            height: 8vh;
-            filter: invert(100%);
-            }
-        }
+  .fleche {
+    img {
+      height: 8vh;
+      filter: invert(100%);
+    }
+  }
 
-        .subject {
-            h2 {
-                font-family: $titleFont;
-                font-weight: 300;
-                font-size: 3rem
-            }
-        }
+  .subject {
+    h2 {
+      font-family: $titleFont;
+      font-weight: 300;
+      font-size: 3rem;
+    }
+  }
 
-        .nombre-questions {
-            h2 {
-                font-family: $textFont;
-                font-size: 3rem
-            }
-        }
-
+  .nombre-questions {
+    h2 {
+      font-family: $textFont;
+      font-size: 3rem;
+    }
+  }
 }
 
 .geoColor {
-    background: $geoColor;
+  background: $geoColor;
 }
 
 .francaisColor {
-    background: $francaisColor;
+  background: $francaisColor;
 }
 
 .mathsColor {
-    background: $mathsColor;
+  background: $mathsColor;
 }
 
 .anglaisColor {
-    background: $anglaisColor;
+  background: $anglaisColor;
 }

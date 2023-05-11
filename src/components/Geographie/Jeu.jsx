@@ -1,11 +1,11 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import ReponseCapitale from './ReponseCapitale';
-import ReponseDrapeau from './ReponseDrapeau';
+import ReponseDrapeau from './ReponseDrapeau.jsx';
+import ReponseCapitale from './ReponseCapitale.jsx';
 
-const Jeu = ({questionTabCap, questionsTab}) => {
+const Jeu = ({questionTabCap, questionsTab, setCount}) => {
+  const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
 
-    const [questionIsDrapeau, setQuestionIsDrapeau] = useState(true)
 
     const [click, setClick] = useState(false)
 
@@ -20,6 +20,11 @@ console.log(questionsTab[0]);
 
 
 
+    const handleClick = function (e ) {
+        e.preventDefault()
+        setCount (c => c + 1)
+    }
+
     return (
         <div className='jeu'>  
             <div className="questionDrapeau"></div>
@@ -28,6 +33,7 @@ console.log(questionsTab[0]);
             <p>Quel est le drapeau de ce pays ?</p>
             <div className="questionBox">
                {questionDrapeau.map((el)=>{
+
                 return <ReponseDrapeau
                 key={el.drapeau}
                 drapeau={el.drapeau}
@@ -40,13 +46,15 @@ console.log(questionsTab[0]);
             </>   
             }
                {/* {questionCapitaleTest.map((el)=>{
+
                 return <ReponseCapitale
                 capitale={el.capitale}
                 bonneReponse={el.bonneReponse} 
                 click={click}        
                 setClick={setClick}
                 />
-            })} */}
+            })*/}           
+            </div>
         </div>
     );
 };
