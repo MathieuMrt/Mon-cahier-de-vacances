@@ -21,3 +21,34 @@
         text-decoration:none;
  }
 }
+
+.jeuAngl {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15% 0px;
+
+    .motsBox {
+        display: flex;
+        gap: 50px;
+     
+    }
+    .reponseAngl {
+        background-color: white;
+        font-size: 2em;
+        font-family: $titleFont;
+    }
+    button {
+        background-color: $anglaisColor;
+        border-radius: 35px;
+        display: inline-block;
+        color: #ffffff;
+        font-family: $titleFont;
+        font-size: 1.8rem;
+        padding: 14px 50px;
+        text-decoration: none;
+    }
+}
