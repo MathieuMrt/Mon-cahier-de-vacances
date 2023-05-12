@@ -47,32 +47,27 @@
   }
 }
 
+.drapeau {
+  cursor: pointer;
+  font-size: 8em;
+  width: 150px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bonneReponse {
+  border: 3px solid green;
+}
 
-
-  .drapeau {      
-    cursor: pointer;
-    font-size: 8em;    
-    
-    padding: 10px;
-    width: 250px; 
-    height: 160px;    
-    background-size: contain;
-    background-repeat:no-repeat ;
-    background-position: center;
-  }
-  .bonneReponse {
-    border: 5px solid green;
-  }
-
-  .mauvaiseReponse {
-    border: 5px solid red;
-  }
-
+.mauvaiseReponse {
+  border: 3px solid red;
+}
 
 .reponse-capitale {
   display: flex;
   gap: 30px;
-  height: 215px;
+  height: 125px;
 
   .Capitale {
     font-family: $titleFont;
@@ -95,10 +90,10 @@
 
 .Consigne {
   .visibleButton {
-      display: block;
+    display: block;
   }
-  
+
   .hiddenButton {
-      display: none;
+    display: none;
   }
 }
