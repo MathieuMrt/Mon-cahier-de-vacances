@@ -5,6 +5,7 @@ import ConsigneEn from "./ConsigneEn.jsx";
 import EndEn from "./EndEn.jsx";
 import JeuEng from "./JeuEng.jsx";
 
+
 const Anglais = () => {
   const [gameStartAn,setGameStartAn]=useState(false)
 
@@ -12,8 +13,10 @@ const Anglais = () => {
     <div className="anglais">
       <Header color="anglaisColor" subject="Anglais" />
       <main className="main-page">
+
          {gameStartAn === false && <ConsigneEn setGameStartAn={setGameStartAn}/> }
          {gameStartAn && <JeuEng />}
+
       </main>
      
       <Footer color="anglaisColor" />
