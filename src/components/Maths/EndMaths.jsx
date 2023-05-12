@@ -15,10 +15,7 @@ const EndMaths = () => {
         <br />
         <p className="Consigne_p">Tu as fini le parcours Maths !</p>
       </div>
-      <div className="Consigne_container_buttons_endPage">
-        <button className="Maths_button_retourHome" onClick={() => navigate(-1)}>Accueil</button>
-        <button className="Maths_button">Suivant</button>
-      </div>
+        <button className="Maths_button" onClick={() => navigate(-1)}>Accueil</button>
     </div>
   );
 };

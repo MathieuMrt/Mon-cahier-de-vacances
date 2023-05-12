@@ -2,8 +2,7 @@ import coral from "../../assets/images/coral.png";
 import { useNavigate } from "react-router-dom";
 
 const EndFr = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className="Consigne">
@@ -15,7 +14,9 @@ const navigate = useNavigate();
         <p className="Consigne_p">Tu as fini le parcours Français !</p>
       </div>
       <div className="Consigne_container_buttons_endPage">
-        <button className="Francais_button" onClick={() => navigate(-1)}>Accueil</button>
+        <button className="Francais_button" onClick={() => navigate(-1)}>
+          Accueil
+        </button>
       </div>
     </div>
   );
