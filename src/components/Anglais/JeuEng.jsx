@@ -112,10 +112,11 @@ export default function JeuEng() {
           );
         })}
     
-
+    </div>
       {fini === false && <button onClick={handleQuestion}>Suivant</button>}
 
       {fini && <EndEn />}
     </div>
+  
   );
 }

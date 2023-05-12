@@ -8,8 +8,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
     const [visibilityOK, setVisibilityOK] = useState("visibleButton")
     const [visibilityNext, setVisibilityNext] = useState("hiddenButton")
 
-    const [value1, setvalue1] = useState(Math.floor(Math.random()* (90 - 1)) + 1);
-    const [value2, setvalue2] = useState(Math.floor(Math.random()* (90 - 1)) + 1);
+    const [value1, setvalue1] = useState(Math.floor(Math.random()* (50 - 15)) + 15);
+    const [value2, setvalue2] = useState(Math.floor(Math.random()* (14 - 1)) + 1);
     const [calcul, setCalcul] = useState("-");
 
     const operators = ["-", "+", "*"];
@@ -26,6 +26,7 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
         handleGameEndMath();
         setVisibilityOK("visibleButton");
         setVisibilityNext("hiddenButton");
+        setAnswer("");
     }
 
     const calculator = (a, b, c) => {
@@ -52,14 +53,15 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
     const handleClickOK = () => {
       setVisibilityOK("hiddenButton");
       setVisibilityNext("visibleButton");
-
+      
       if (answer == goodAnswer) {
         setClasseMath("bonneReponse");
         setTitleMath("Bravo!");
       }
+
       else {
         setClasseMath("mauvaiseReponse");
-        setTitleMath("Oups!");
+        setTitleMath(`Dommage, la réponse était ${goodAnswer}`);
       }
     }
 
@@ -68,7 +70,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
           <div className="jeu-maths">
           <h3>{titleMath}</h3>
           <div className ="question">
-            <p>{value1} {calcul} {value2} = </p>
+            <p>{value1} {calcul} {value2} </p>
+            <p>=</p>
             <input className= {`input-answer ${classeMath}`} type="text" value={answer} onChange={handleChangeCalc}/>
           </div>
           <button className = {`boutonOKJeu ${visibilityOK}`} onClick={handleClickOK}>Valider</button>
