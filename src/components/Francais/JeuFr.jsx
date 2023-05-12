@@ -72,7 +72,7 @@ const JeuFr = ({ setCount, count }) => {
   return (
     <div className="boiteJeuFr">
       {error && <p className="error">Tu dois entrer une valeur !</p>}
-      {!isValidate && !error && <p>Trouve l'anagramme...</p>}
+      {!isValidate && !error && count<11 &&<p>Trouve l'anagramme...</p>}
       {isValidate && value === mots[index] && <p>Bravo !</p>}
       {isValidate && value !== mots[index] && (
         <p>Dommage, la réponse était {mots[index]}</p>
@@ -98,7 +98,7 @@ const JeuFr = ({ setCount, count }) => {
             </button>
           )}
           {!isValidate && (
-            <button className="Francais_button" onClick={handleClickJeuFr}>
+            <button className="Francais_button_validate" onClick={handleClickJeuFr}>
               {" "}
               Valider
             </button>

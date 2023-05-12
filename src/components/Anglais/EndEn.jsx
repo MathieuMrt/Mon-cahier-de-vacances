@@ -1,7 +1,14 @@
 import ice from "../../assets/images/ice-cream.png";
+import JSConfetti from 'js-confetti'
 import { useNavigate } from "react-router-dom";
+
 const EndEn = () => {
+  const jsConfetti = new JSConfetti()
+
+  jsConfetti.addConfetti()
+
   const navigate = useNavigate();
+
   return (
     
     <div className="Consigne">

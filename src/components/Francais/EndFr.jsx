@@ -1,7 +1,15 @@
 import coral from "../../assets/images/coral.png";
 import { useNavigate } from "react-router-dom";
+import JSConfetti from 'js-confetti'
+
+
 
 const EndFr = () => {
+  const jsConfetti = new JSConfetti()
+
+  jsConfetti.addConfetti({
+    emojis: ['🦄']
+  })
   const navigate = useNavigate();
 
   return (
