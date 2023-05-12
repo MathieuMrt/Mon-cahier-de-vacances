@@ -27,9 +27,9 @@ useEffect(() => {
 
 
     return (
-        <div className ="reponse-drapeau">
-            <div className={`drapeau ${classe}`} onClick={handleClick}><img src={drapeau}></img></div>
-        </div>
+        
+            <div className={`drapeau ${classe}`} onClick={handleClick} style={{"background-image": `url(${drapeau})`}}></div>
+        
     );
 };
 

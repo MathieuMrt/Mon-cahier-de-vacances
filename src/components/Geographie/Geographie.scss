@@ -21,8 +21,12 @@
   .questionBox {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 215px;
     gap: 50px;
+    background-color: $backGroundColor;
+    border-radius: 20px;
+    padding: 10px 10px;
   }
   .boutonSuivantJeu {
     background-color: $geoColor;
@@ -43,15 +47,18 @@
   }
 }
 
-.reponse-drapeau {
-  text-align: center;
 
-  .drapeau {
+
+  .drapeau {      
     cursor: pointer;
-    font-size: 8em;
-    border-radius: 15px;
-    padding: 0px 40px;
-    background-color: $white;
+    font-size: 8em;    
+    
+    padding: 10px;
+    width: 250px; 
+    height: 160px;    
+    background-size: contain;
+    background-repeat:no-repeat ;
+    background-position: center;
   }
   .bonneReponse {
     border: 5px solid green;
@@ -60,7 +67,7 @@
   .mauvaiseReponse {
     border: 5px solid red;
   }
-}
+
 
 .reponse-capitale {
   display: flex;
