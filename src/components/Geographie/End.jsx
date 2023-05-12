@@ -9,7 +9,7 @@ const End = () => {
 
   const [visibilityHome, setVisibilityHome] = useState("hiddenButton");
 
-  const [consigneH2, setConsigneH2] = useState("✨ Bravo ✨!");
+  const [consigneH2, setConsigneH2] = useState("✨ Bravo ! ✨");
   const [consigneP, setConsigneP] = useState("Tu as fini le parcours Géographie !");
 
   useEffect(() => {

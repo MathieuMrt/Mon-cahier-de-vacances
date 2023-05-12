@@ -11,6 +11,7 @@
         text-decoration: none;
     }
 
+
  .jeu-maths {
     font-family: $textFont;
     display : flex;
@@ -76,9 +77,10 @@
         }
 
         .boutonOKJeu {
-            background-color: $mathsColor;
+            background-color: $white;
             border-radius: 35px;
-            color: #ffffff;
+            color: $mathsColor;
+            border: solid 3px $mathsColor;
             font-family: $titleFont;
             font-size: 1.8rem;
             padding: 14px 50px;
