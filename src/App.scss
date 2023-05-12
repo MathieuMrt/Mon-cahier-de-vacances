@@ -27,7 +27,7 @@ $textFont: "Quicksand", sans-serif;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #root {
@@ -68,7 +68,7 @@ button {
   &_img {
     position: absolute;
     right: 22%;
-    top: 20%;
+    top: 15%;
     width: 10%;
   }
 
@@ -104,8 +104,8 @@ button {
     font-size: 1.5rem;
     font-family: $textFont;
     font-weight: 200;
-    font-style: italic
-  } 
+    font-style: italic;
+  }
 }
 
 @import "./components/HomePage/HomePage.scss";

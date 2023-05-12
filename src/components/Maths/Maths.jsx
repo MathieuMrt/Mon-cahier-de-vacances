@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ConsigneMath from "./ConsigneMath.jsx";
@@ -13,8 +12,8 @@ const Maths = () => {
     const [count, setCount] = useState(0);
     const [gameStartMath,setgameStartMath]=useState(false);
     const handleGameStartMath = () => {
-      setgameStartMath(true);
-      setCount(1);           
+      setgameStartMath(true); 
+      setCount(1)           
     };
 
     const [gameEndMath,setgameEndMath]=useState(false);    
