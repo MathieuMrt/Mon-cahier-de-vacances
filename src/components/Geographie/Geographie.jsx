@@ -17,6 +17,7 @@ const Geographie = () => {
       const newData = await response.json();
 
       setApays(newData);
+      console.log(newData)
     };
     fetchData();
   }, []);
@@ -34,17 +35,17 @@ const Geographie = () => {
       while (question.length <= 5) {
         const rand = Math.floor(Math.random() * filtEu.length);
 
-        if (test.indexOf(filtEu[rand].flag) === -1) {
+        if (test.indexOf(filtEu[rand].flags.png) === -1) {
           question.push([
             {
               bonnereponse: true,
-              drapeau: filtEu[rand].flag,
+              drapeau: filtEu[rand].flags.png,
               pays: filtEu[rand].translations.fra.common,
             },
           ]);
         }
 
-        test.push(filtEu[rand].flag);
+        test.push(filtEu[rand].flags.png);
       }
       for (let i = 0; i < question.length; i++) {
         let test2 = [question[i][0].drapeau];
@@ -52,14 +53,14 @@ const Geographie = () => {
         while (question[i].length < 4) {
           const rand2 = Math.floor(Math.random() * filtEu.length);
 
-          if (test2.indexOf(filtEu[rand2].flag) === -1) {
+          if (test2.indexOf(filtEu[rand2].flags.png) === -1) {
             question[i].push({
               bonnereponse: false,
-              drapeau: filtEu[rand2].flag,
+              drapeau: filtEu[rand2].flags.png,
               pays: filtEu[rand2].translations.fra.common,
             });
 
-            test2.push(filtEu[rand2].flag);
+            test2.push(filtEu[rand2].flags.png);
           }
         }
         for (var k = question[i].length - 1; k > 0; k--) {
@@ -75,7 +76,7 @@ const Geographie = () => {
       while (questionCap.length <= 5) {
         const rand = Math.floor(Math.random() * filtEu.length);
 
-        if (test.indexOf(filtEu[rand].flag) === -1) {
+        if (test.indexOf(filtEu[rand].flags.png) === -1) {
           questionCap.push([
             {
               bonnereponse: true,
@@ -85,7 +86,7 @@ const Geographie = () => {
           ]);
         }
 
-        testCap.push(filtEu[rand].flag);
+        testCap.push(filtEu[rand].flags.png);
       }
 
       for (let i = 0; i < questionCap.length; i++) {
