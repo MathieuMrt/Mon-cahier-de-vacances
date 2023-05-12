@@ -12,16 +12,17 @@ import yaourt from "../../assets/images/yaourt.png";
 import EndEn from "./EndEn";
 import ImageEng from "./ImageEng";
 import MotAng from "./MotAng";
-export default function JeuEng() {
-  const [index, setIndex] = useState(0);
+export default function JeuEng({index,setIndex,bidon,setBidon}) {
+  
   const [fini, setFini] = useState(false);
   const [suivant, setSuivant] = useState(false);
   const [wrongs, setWrongs] = useState([]);
-  const [choix, setChoix] = useState("");
-  const [victoire, setVictoire] = useState(false);
+ 
+  
   const [reponses,setReponses]=useState([])
   const handleQuestion = () => {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
+    index===9 && setBidon(bidon+1)
     console.log(index);
     console.log(fini);
     setSuivant(!suivant);
@@ -63,18 +64,11 @@ export default function JeuEng() {
     "Tree",
   ];
 
-  const handleReponse = (e) => {
-    setChoix(e.target.id);
-    if (wrongs.indexOf(choix) === -1) {
-      setVictoire(true);
-    } else {
-      setVictoire(false);
-    }
-  };
+  
 
   useEffect(() => {
     const temp = [];
-    setVictoire(false);
+   
     while (temp.length < 2) {
       const rand = Math.floor(Math.random() * mots.length);
 
@@ -111,7 +105,7 @@ export default function JeuEng() {
             <MotAng value={e} bonnereponse={images[index].response}/>
           );
         })}
-    
+    </div>
 
       {fini === false && <button onClick={handleQuestion}>Suivant</button>}
 
