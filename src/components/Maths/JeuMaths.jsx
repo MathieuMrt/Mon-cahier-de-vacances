@@ -5,6 +5,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
 
     const [classeMath, setClasseMath] = useState("")
     const [titleMath, setTitleMath] = useState("Quel est le résultat de ce calcul?")
+    const [visibilityOK, setVisibilityOK] = useState("visibleButton")
+    const [visibilityNext, setVisibilityNext] = useState("hiddenButton")
 
     const [value1, setvalue1] = useState(Math.floor(Math.random()* (90 - 1)) + 1);
     const [value2, setvalue2] = useState(Math.floor(Math.random()* (90 - 1)) + 1);
@@ -22,6 +24,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
         setClasseMath("");
         setTitleMath("Quel est le résultat de ce calcul?");
         handleGameEndMath();
+        setVisibilityOK("visibleButton");
+        setVisibilityNext("hiddenButton");
     }
 
     const calculator = (a, b, c) => {
@@ -46,6 +50,9 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
       }
 
     const handleClickOK = () => {
+      setVisibilityOK("hiddenButton");
+      setVisibilityNext("visibleButton");
+
       if (answer == goodAnswer) {
         setClasseMath("bonneReponse");
         setTitleMath("Bravo!");
@@ -57,18 +64,17 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
     }
 
     return (
-        <div className="jeu-maths">
-            <div className ="question">
-                <h3>{titleMath}</h3>
-                <p>{value1} {calcul} {value2} = </p>
-                <input className= {`input-answer ${classeMath}`} type="text" value={answer} onChange={handleChangeCalc}/>
-                <div className= "buttons">
-                <button className = "boutonOKJeu" onClick={handleClickOK}>OK</button>
-                <button className = "boutonNextJeu" onClick={handleClickNext}>Suivant</button>
-                </div>
-            </div>
+        <div className="Consigne">
+          <div className="jeu-maths">
+          <h3>{titleMath}</h3>
+          <div className ="question">
+            <p>{value1} {calcul} {value2} = </p>
+            <input className= {`input-answer ${classeMath}`} type="text" value={answer} onChange={handleChangeCalc}/>
+          </div>
+          <button className = {`boutonOKJeu ${visibilityOK}`} onClick={handleClickOK}>Valider</button>
+          <button className = {`boutonNextJeu ${visibilityNext}`} onClick={handleClickNext}>Suivant</button>
+          </div>
         </div>
-        
     );
 };
 
