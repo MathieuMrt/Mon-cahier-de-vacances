@@ -43,7 +43,7 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
       };
    
     const goodAnswer = calculator(value1, calcul, value2);
-
+const [error, setError] = useState(false)
     const [answer, setAnswer] = useState ("");
 
     function handleChangeCalc(e) {
@@ -51,6 +51,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
       }
 
     const handleClickOK = () => {
+      if(answer) {
+        setError(false)
       setVisibilityOK("hiddenButton");
       setVisibilityNext("visibleButton");
       
@@ -63,12 +65,14 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
         setClasseMath("mauvaiseReponse");
         setTitleMath(`Dommage, la réponse était ${goodAnswer}`);
       }
+    } else {setError(true)}
     }
 
     return (
         <div className="Consigne">
           <div className="jeu-maths">
-          <h3>{titleMath}</h3>
+         {!error && <h3>{titleMath}</h3>} 
+         {error && <h3 className='rouge'>Tu dois entrer une réponse !</h3>} 
           <div className ="question">
             <p>{value1} {calcul} {value2} </p>
             <p>=</p>

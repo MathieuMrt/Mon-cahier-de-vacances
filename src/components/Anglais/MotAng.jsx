@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react';
 import React from 'react';
 
 const MotAng = ({value,bonnereponse,click,setClick, victoire, setVictoire, clicked, setClicked}) => {
-  
+    const valueMaj=(value+'').charAt(0).toUpperCase()+value.substr(1);
     const [classe, setClasse] = useState("");
 
 
@@ -26,7 +26,7 @@ setClicked(true)
 
     return (
         <div className={`reponseAngl ${classe}`} onClick={handleClick}>
-            {value}
+            {valueMaj}
         </div>
     );
 };
