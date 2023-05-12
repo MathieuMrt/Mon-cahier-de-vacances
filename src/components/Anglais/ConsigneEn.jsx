@@ -1,6 +1,7 @@
 import ice from "../../assets/images/ice-cream.png";
 
-const ConsigneEn = () => {
+const ConsigneEn = ({setGameStartAn,setBidon}) => {
+  console.log(setGameStartAn)
   return (
     <div className="Consigne">
       <img src={ice} alt="sun" className="Consigne_img" />
@@ -13,7 +14,8 @@ const ConsigneEn = () => {
           phrases
         </p>
       </div>
-      <button className="Anglais_button">Commencer</button>
+      <button className="Anglais_button" onClick={()=>{setGameStartAn(true);
+                                                        setBidon(1)}}>Commencer</button>
     </div>
   );
 };

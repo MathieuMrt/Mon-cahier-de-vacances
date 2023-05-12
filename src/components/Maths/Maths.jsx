@@ -12,8 +12,8 @@ const Maths = () => {
     const [count, setCount] = useState(0);
     const [gameStartMath,setgameStartMath]=useState(false);
     const handleGameStartMath = () => {
-      setgameStartMath(true);
-      setVisibility("visible");            
+      setgameStartMath(true); 
+      setCount(1)           
     };
 
     const [gameEndMath,setgameEndMath]=useState(false);    
@@ -21,14 +21,13 @@ const Maths = () => {
       if (count === 10) {
         setgameEndMath(true);
         setCount(0);
-        setVisibility("hidden");
       }
     };
 
 
   return (
     <div className="maths">
-      <Header color="mathsColor" subject="Maths" count={count} visibility={visibility}/>
+      <Header color="mathsColor" subject="Maths" count={count}/>
       <main className="main-page">
       {!gameStartMath && (
         <ConsigneMath handleGameStartMath={handleGameStartMath} />
