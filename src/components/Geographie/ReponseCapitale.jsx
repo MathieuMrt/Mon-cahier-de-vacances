@@ -19,7 +19,7 @@ const ReponseCapitale = ({
         setIsGoodAnswer(false);
       }
       setClick(true);
-      setClickedAnswer(`${capitale}: ${pays}`);
+      setClickedAnswer(`${capitale}, qui est en ${pays}`);
     }
   };
 
