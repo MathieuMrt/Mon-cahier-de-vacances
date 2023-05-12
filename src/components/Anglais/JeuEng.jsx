@@ -11,7 +11,7 @@ import singe from "../../assets/images/singe.png";
 import yaourt from "../../assets/images/yaourt.png";
 import EndEn from "./EndEn";
 import ImageEng from "./ImageEng";
-
+import MotAng from "./MotAng";
 export default function JeuEng() {
   const [index, setIndex] = useState(0);
   const [fini, setFini] = useState(false);
@@ -19,7 +19,7 @@ export default function JeuEng() {
   const [wrongs, setWrongs] = useState([]);
   const [choix, setChoix] = useState("");
   const [victoire, setVictoire] = useState(false);
-
+  const [reponses,setReponses]=useState([])
   const handleQuestion = () => {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
     console.log(index);
@@ -83,6 +83,14 @@ export default function JeuEng() {
       }
     }
     setWrongs(temp);
+    const temp2 = temp
+    temp2.push(images[index].response)
+    
+    for(var k =temp.length-1 ; k>0 ;k--){
+      var j = Math.floor( Math.random() * (k + 1) ); //random index
+      [temp[k],temp[j]]=[temp[j],temp[k]]; // swap
+  }
+  setReponses(temp2)
     console.log(wrongs);
   }, [suivant]);
 
@@ -97,18 +105,12 @@ export default function JeuEng() {
       )}
 
       {fini === false &&
-        wrongs.map((e) => {
+        reponses.map((e) => {
           return (
-            <div id={e} onClick={handleReponse}>
-              {e}
-            </div>
+            <MotAng value={e} bonnereponse={images[index].response}/>
           );
         })}
-      {fini === false && (
-        <div onClick={handleReponse} id={images[index].response}>
-          {images[index].response}
-        </div>
-      )}
+    
       {fini === false && <button onClick={handleQuestion}>Suivant</button>}
 
       {fini && <EndEn />}
