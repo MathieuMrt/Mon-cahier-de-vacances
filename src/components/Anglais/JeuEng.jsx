@@ -12,18 +12,19 @@ import yaourt from "../../assets/images/yaourt.png";
 import EndEn from "./EndEn";
 import ImageEng from "./ImageEng";
 import MotAng from "./MotAng";
-export default function JeuEng() {
-  const [index, setIndex] = useState(0);
+export default function JeuEng({index,setIndex,bidon,setBidon}) {
+  
   const [fini, setFini] = useState(false);
   const [suivant, setSuivant] = useState(false);
   const [wrongs, setWrongs] = useState([]);
-  const [choix, setChoix] = useState("");
-  const [victoire, setVictoire] = useState(false);
+ 
+  
   const [reponses,setReponses]=useState([])
 const [click, setClick] = useState(false)
 
   const handleQuestion = () => {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
+    index===9 && setBidon(bidon+1)
     console.log(index);
     console.log(fini);
     setSuivant(!suivant);
@@ -68,8 +69,10 @@ const [click, setClick] = useState(false)
   ];
 
 
+
   useEffect(() => {
     const temp = [];  
+
     while (temp.length < 2) {
       const rand = Math.floor(Math.random() * mots.length);
 
