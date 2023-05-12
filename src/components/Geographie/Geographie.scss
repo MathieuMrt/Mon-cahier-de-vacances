@@ -54,8 +54,8 @@ text-align: center;
         cursor: pointer;
         font-size: 8em;
         border-radius: 15px;
-        padding: 0px 40px;
-        background-color: $backGroundColor;        
+        padding: 0px 40px;   
+        background-color: $white;  
         
     }
     .bonneReponse {
@@ -82,7 +82,7 @@ height: 215px;
     font-size: 2em;
     border-radius: 15px;
     padding: 0px 40px;
-    background-color: $backGroundColor;
+    background-color: $white;
     border: 4px solid $geoColor;
     height: 50%;
   }

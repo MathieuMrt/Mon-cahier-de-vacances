@@ -43,6 +43,7 @@ useEffect (()=>{
 console.log(click);
 
     return (
+        <div className="Consigne">
         <>
        {count !== 11 &&       
        
@@ -119,7 +120,7 @@ console.log(click);
              }
              {count > 10 &&   <End/>         }
              </>        
-        
+             </div>
     );
 };
 
