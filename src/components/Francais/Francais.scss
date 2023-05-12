@@ -74,4 +74,15 @@
   .error {
     color: red;
   }
+
+  .Consigne {
+    .visibleButton {
+        display: block;
+    }
+    
+    .hiddenButton {
+        display: none;
+    }
+  }
+  
 }
