@@ -85,4 +85,14 @@
             text-decoration: none;
         }
     }
+
+    .Consigne {
+        .visibleButton {
+            display: block;
+        }
+        
+        .hiddenButton {
+            display: none;
+        }
+    }
  }
