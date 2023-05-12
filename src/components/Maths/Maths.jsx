@@ -13,7 +13,8 @@ const Maths = () => {
     const [gameStartMath,setgameStartMath]=useState(false);
     const handleGameStartMath = () => {
       setgameStartMath(true);
-      setVisibility("visible");            
+      setVisibility("visible"); 
+      setCount(1)           
     };
 
     const [gameEndMath,setgameEndMath]=useState(false);    

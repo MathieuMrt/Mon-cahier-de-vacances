@@ -87,7 +87,7 @@ export default function JeuEng() {
   }, [suivant]);
 
   return (
-    <div>
+    <div className="jeuAngl Consigne">
       {fini === false && (
         <ImageEng
           name={images[index].name}
@@ -95,20 +95,16 @@ export default function JeuEng() {
           response={images[index].response}
         />
       )}
-
+ <div className="motsBox">
       {fini === false &&
         wrongs.map((e) => {
           return (
-            <div id={e} onClick={handleReponse}>
+            <div id={e} onClick={handleReponse} className="reponseAngl">
               {e}
             </div>
           );
         })}
-      {fini === false && (
-        <div onClick={handleReponse} id={images[index].response}>
-          {images[index].response}
-        </div>
-      )}
+        </div>   
       {fini === false && <button onClick={handleQuestion}>Suivant</button>}
 
       {fini && <EndEn />}
