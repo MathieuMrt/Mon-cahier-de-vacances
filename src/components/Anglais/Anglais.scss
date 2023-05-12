@@ -30,17 +30,40 @@
     align-items: center;
     justify-content: space-around;
     padding: 15% 0px;
+    p {
+        font-family: $textFont;
+        font-size: 2em;
+    }
+    .rouge {
+        color: red;
+    }
 
     .motsBox {
         display: flex;
         gap: 50px;
-     
+
+        .visible {
+            visibility: visible;
+        }
+        .hidden {
+            visibility: hidden;
+        }
     }
     .reponseAngl {
         background-color: white;
         font-size: 2em;
-        font-family: $titleFont;
+        font-family: $textFont;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 10px 30px;
     }
+    .bonneReponse {
+        border: 5px solid green;
+      }
+    
+      .mauvaiseReponse {
+        border: 5px solid red;
+      }
     button {
         background-color: $anglaisColor;
         border-radius: 35px;

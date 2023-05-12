@@ -12,19 +12,30 @@ import yaourt from "../../assets/images/yaourt.png";
 import EndEn from "./EndEn";
 import ImageEng from "./ImageEng";
 import MotAng from "./MotAng";
-export default function JeuEng() {
-  const [index, setIndex] = useState(0);
+export default function JeuEng({index,setIndex,bidon,setBidon}) {
+  
   const [fini, setFini] = useState(false);
   const [suivant, setSuivant] = useState(false);
   const [wrongs, setWrongs] = useState([]);
-  const [choix, setChoix] = useState("");
-  const [victoire, setVictoire] = useState(false);
+ const [victoire, setVictoire] = useState(false)
+ const [clicked, setClicked] = useState(false)
+ const [error, setError] = useState(false)
+  
   const [reponses,setReponses]=useState([])
+const [click, setClick] = useState(false)
+
   const handleQuestion = () => {
+    if(clicked) {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
+    index===9 && setBidon(bidon+1)
     console.log(index);
     console.log(fini);
     setSuivant(!suivant);
+    setClick(false)
+    setVictoire(false)
+    setClicked(false)
+    setError(false)
+  } else {setError (true)}
   };
 
   let images = [
@@ -63,18 +74,11 @@ export default function JeuEng() {
     "Tree",
   ];
 
-  const handleReponse = (e) => {
-    setChoix(e.target.id);
-    if (wrongs.indexOf(choix) === -1) {
-      setVictoire(true);
-    } else {
-      setVictoire(false);
-    }
-  };
+
 
   useEffect(() => {
-    const temp = [];
-    setVictoire(false);
+    const temp = [];  
+
     while (temp.length < 2) {
       const rand = Math.floor(Math.random() * mots.length);
 
@@ -96,11 +100,15 @@ export default function JeuEng() {
 
   return (
     <div className="jeuAngl Consigne">
+     {!click && !error && <p>Clique sur le mot qui correspond à l'image !</p>} 
+     {!click && error && <p className="rouge">Tu dois choisir un mot !</p>} 
+      {click && victoire && <p>Bravo !</p> }
+      {click && !victoire && <p>Dommage...</p> }
       {fini === false && (
         <ImageEng
           name={images[index].name}
           url={images[index].url}
-          response={images[index].response}
+          response={images[index].response}         
         />
       )}
  <div className="motsBox">
@@ -108,13 +116,21 @@ export default function JeuEng() {
         reponses.map((e) => {
           return (
 
-            <MotAng value={e} bonnereponse={images[index].response}/>
+            <MotAng value={e} 
+            bonnereponse={images[index].response}
+             key={e} 
+             click={click}
+            setClick={setClick}
+            setVictoire={setVictoire}
+            victoire={victoire}
+            clicked={clicked}
+            setClicked={setClicked}
+            />
           );
         })}
-    
     </div>
-      {fini === false && <button onClick={handleQuestion}>Suivant</button>}
 
+      {fini === false && <button onClick={handleQuestion} className={click? "visible":"hidden"}>Suivant</button>}
       {fini && <EndEn />}
     </div>
   
