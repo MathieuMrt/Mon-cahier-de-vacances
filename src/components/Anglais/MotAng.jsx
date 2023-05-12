@@ -1,13 +1,13 @@
 import {useState,useEffect} from 'react';
 import React from 'react';
 
-const MotAng = ({value,bonnereponse,click,setClick, victoire, setVictoire}) => {
+const MotAng = ({value,bonnereponse,click,setClick, victoire, setVictoire, clicked, setClicked}) => {
   
     const [classe, setClasse] = useState("");
 
 
     const handleClick = () => {
-
+setClicked(true)
         if (!click) {
           
           if (value!==bonnereponse) {         

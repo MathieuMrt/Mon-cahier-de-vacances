@@ -30,6 +30,13 @@
     align-items: center;
     justify-content: space-around;
     padding: 15% 0px;
+    p {
+        font-family: $textFont;
+        font-size: 2em;
+    }
+    .rouge {
+        color: red;
+    }
 
     .motsBox {
         display: flex;
@@ -45,7 +52,7 @@
     .reponseAngl {
         background-color: white;
         font-size: 2em;
-        font-family: $titleFont;
+        font-family: $textFont;
         cursor: pointer;
         border-radius: 20px;
         padding: 10px 30px;
