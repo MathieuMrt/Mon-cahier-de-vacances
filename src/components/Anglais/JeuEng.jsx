@@ -17,12 +17,15 @@ export default function JeuEng({index,setIndex,bidon,setBidon}) {
   const [fini, setFini] = useState(false);
   const [suivant, setSuivant] = useState(false);
   const [wrongs, setWrongs] = useState([]);
- 
+ const [victoire, setVictoire] = useState(false)
+ const [clicked, setClicked] = useState(false)
+ const [error, setError] = useState(false)
   
   const [reponses,setReponses]=useState([])
 const [click, setClick] = useState(false)
 
   const handleQuestion = () => {
+    if(clicked) {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
     index===9 && setBidon(bidon+1)
     console.log(index);
@@ -30,6 +33,9 @@ const [click, setClick] = useState(false)
     setSuivant(!suivant);
     setClick(false)
     setVictoire(false)
+    setClicked(false)
+    setError(false)
+  } else {setError (true)}
   };
 
   let images = [
@@ -94,7 +100,8 @@ const [click, setClick] = useState(false)
 
   return (
     <div className="jeuAngl Consigne">
-     {!click && <p>Clique sur le mot qui correspond à l'image !</p>} 
+     {!click && !error && <p>Clique sur le mot qui correspond à l'image !</p>} 
+     {!click && error && <p className="rouge">Tu dois choisir un mot !</p>} 
       {click && victoire && <p>Bravo !</p> }
       {click && !victoire && <p>Dommage...</p> }
       {fini === false && (
@@ -116,6 +123,8 @@ const [click, setClick] = useState(false)
             setClick={setClick}
             setVictoire={setVictoire}
             victoire={victoire}
+            clicked={clicked}
+            setClicked={setClicked}
             />
           );
         })}
