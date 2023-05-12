@@ -98,7 +98,7 @@ const JeuFr = ({ setCount, count }) => {
             </button>
           )}
           {!isValidate && (
-            <button className="Francais_button" onClick={handleClickJeuFr}>
+            <button className="Francais_button_validate" onClick={handleClickJeuFr}>
               {" "}
               Valider
             </button>

@@ -12,6 +12,17 @@
     padding: 14px 50px;
     text-decoration: none;
   }
+  &_button_validate {
+    background-color: $white;
+    border: solid 3px $francaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: $francaisColor;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
 }
 
 .JeuFr {
