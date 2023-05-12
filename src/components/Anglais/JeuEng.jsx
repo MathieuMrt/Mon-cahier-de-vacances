@@ -100,7 +100,7 @@ const [click, setClick] = useState(false)
 
   return (
     <div className="jeuAngl Consigne">
-     {!click && !error && <p>Clique sur le mot qui correspond à l'image !</p>} 
+     {!fini && !click && !error && <p>Clique sur le mot qui correspond à l'image !</p>} 
      {!click && error && <p className="rouge">Tu dois choisir un mot !</p>} 
       {click && victoire && <p>Bravo !</p> }
       {click && !victoire && <p>Dommage...</p> }
