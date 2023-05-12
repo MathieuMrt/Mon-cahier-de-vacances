@@ -1,22 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-$geoColor: #FDC817;
-$francaisColor: #7ED957;
-$mathsColor: #FF3131;
-$anglaisColor: #5CE1E6;
-$backGroundColor: #FDF4E7;
-$titleColor: #FA8E78;
-$titleFont: 'Pacifico', cursive;
-$textFont: 'Quicksand', sans-serif;
-
+$geoColor: #fdc817;
+$francaisColor: #7ed957;
+$mathsColor: #ff3131;
+$anglaisColor: #5ce1e6;
+$backGroundColor: #fdf4e7;
+$titleColor: #fa8e78;
+$white: #ffffff;
+$titleFont: "Pacifico", cursive;
+$textFont: "Quicksand", sans-serif;
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.main-page {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  background-color: $backGroundColor;
+}
+
+.Consigne {
+  border-radius: 50px;
+  margin: 0 auto;
+  width: 60%;
+  height: 90%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  &_text {
+    width: 90%;
+    margin: 0 auto;
+    background-color: $white;
+    text-align: center;
+  }
+
+  &_h2 {
+    background-color: $white;
+    font-family: $textFont;
+    font-size: 1.8rem;
+  }
+
+  &_p {
+    background-color: $white;
+    font-family: $textFont;
+    font-size: 1.8rem;
+  }
+
+  &_img {
+    position: absolute;
+    right: 22%;
+    top: 15%;
+    width: 10%;
+  }
+
+  &_button {
+    background-color: $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
     text-decoration: none;
-    list-style: none;
+  }
+
+  &_container_buttons_endPage {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &_button_retourHome {
+    background-color: $white;
+    border: solid 2px $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: $geoColor;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+
+  &_anagram {
+    font-size: 1.5rem;
+    font-family: $textFont;
+    font-weight: 200;
+    font-style: italic;
+  }
 }
 
 @import "./components/HomePage/HomePage.scss";

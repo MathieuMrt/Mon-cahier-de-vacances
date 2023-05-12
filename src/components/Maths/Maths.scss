@@ -1,2 +1,100 @@
 .maths {
-}
+
+    .Maths_button {
+        background-color: $mathsColor;
+        border-radius: 35px;
+        display: inline-block;
+        color: #ffffff;
+        font-family: $titleFont;
+        font-size: 1.8rem;
+        padding: 14px 50px;
+        text-decoration: none;
+    }
+
+
+ .jeu-maths {
+    font-family: $textFont;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+    font-size: 2rem;
+    font-weight: 400;
+
+        h3 {
+            font-weight: 400;
+            padding: 10% 0 0 0;
+        }
+        .rouge {
+            color: red;
+        }
+
+        .question {
+            display: flex;
+            padding: 10% 0;
+            justify-content: space-around;
+
+            .input-answer {
+                font-family: $textFont;
+                border: solid 1px black;
+                width: 30%;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+    
+            input:focus{
+                outline: none;
+            }
+            
+            .bonneReponse {
+                border: 3px solid green;
+                width: 30%;
+            }
+    
+            .mauvaiseReponse {
+                border: 3px solid red;
+                width: 30%;
+            }
+        }
+
+        .visibleButton {
+            display: block;
+        }
+        
+        .hiddenButton {
+            display: none;
+        }
+
+        .boutonNextJeu{
+            background-color: $mathsColor;
+            border-radius: 35px;
+            color: #ffffff;
+            font-family: $titleFont;
+            font-size: 1.8rem;
+            padding: 14px 50px;
+            text-decoration: none;
+        }
+
+        .boutonOKJeu {
+            background-color: $white;
+            border-radius: 35px;
+            color: $mathsColor;
+            border: solid 3px $mathsColor;
+            font-family: $titleFont;
+            font-size: 1.8rem;
+            padding: 14px 50px;
+            text-decoration: none;
+        }
+    }
+
+    .Consigne {
+        .visibleButton {
+            display: block;
+        }
+        
+        .hiddenButton {
+            display: none;
+        }
+    }
+ }

@@ -1,3 +1,87 @@
-.anglais {
-    
+.Anglais {
+  &_button {
+    background-color: $anglaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+  &_button_retourHome {
+    background-color: $white;
+    border: solid 2px $anglaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: $anglaisColor;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+}
+
+.jeuAngl {
+  height: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  .Eng-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 30%;
+    }
+  }
+
+  p {
+    font-family: $textFont;
+    font-size: 2em;
+  }
+  .rouge {
+    color: red;
+  }
+
+  .motsBox {
+    display: flex;
+    gap: 50px;
+  }
+  .reponseAngl {
+    background-color: white;
+    font-size: 2em;
+    font-family: $textFont;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 30px;
+    border: 2px solid $anglaisColor;
+  }
+  .bonneReponse {
+    border: 5px solid green;
+  }
+
+  .mauvaiseReponse {
+    border: 5px solid red;
+  }
+  button {
+    background-color: $anglaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+  .visible {
+    visibility: visible;
+  }
+  .hidden {
+    visibility: hidden;
+  }
 }

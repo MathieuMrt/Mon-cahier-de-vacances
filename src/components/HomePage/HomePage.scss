@@ -1,3 +1,122 @@
 .home {
-    
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .titre {
+    position: absolute;
+    font-family: $titleFont;
+    color: $titleColor;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 25px;
+    width: 50%;
+    height: 40%;
+    left: 10%;
+    top: 10%;
+  }
+
+  .start-texte {
+    position: absolute;
+    font-family: $textFont;
+    font-size: 2rem;
+    left: 14%;
+    top: 60%;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar-button {
+    position: absolute;
+    font-family: $titleFont;
+    font-size: 2.5rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 10%;
+    gap: 25px;
+    left: 10%;
+    top: 70%;
+  }
+
+  .nav-geo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $geoColor;
+  }
+
+  .nav-français {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $francaisColor;
+  }
+
+  .nav-maths {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: $mathsColor;
+  }
+
+  .nav-anglais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    background-color: $anglaisColor;
+  }
+
+  .image-crabe {
+    position: absolute;
+    width: 15%;
+    left: 75%;
+    bottom: 70%;
+    animation: tilt-shaking 0.87s infinite;
+    cursor: pointer;
+  }
+
+  .image-vague {
+    position: absolute;
+    width: 55%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .crabRav {
+    position: absolute;
+    z-index: 2;
+    width: 70%;
+
+    video {
+      width: 100%;
+    }
+  }
+
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }

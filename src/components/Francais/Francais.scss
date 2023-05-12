@@ -1,3 +1,88 @@
-.francais {
+.Francais {
+  width: 100vw;
+  height: 100vh;
 
+  &_button {
+    background-color: $francaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+  &_button_validate {
+    background-color: $white;
+    border: solid 3px $francaisColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: $francaisColor;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+}
+
+.JeuFr {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10%;
+  &_mot {
+    font-size: 2.5rem;
+    font-family: $textFont;
+  }
+
+  &_input_normal {
+    border: solid 1px black;
+    width: 30%;
+  }
+
+  &_input_vert {
+    border: solid 3px $francaisColor;
+    width: 30%;
+  }
+  &_input_rouge {
+    border: solid 3px red;
+    width: 30%;
+  }
+
+  input:focus {
+    outline: none;
+  }
+  input {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: $textFont;
+  }
+}
+
+.boiteJeuFr {
+  padding: 10% 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+
+  p {
+    font-family: $textFont;
+    font-size: 2em;
+  }
+  .error {
+    color: red;
+  }
+
+  .Consigne {
+    .visibleButton {
+        display: block;
+    }
+    
+    .hiddenButton {
+        display: none;
+    }
+  }
+  
 }

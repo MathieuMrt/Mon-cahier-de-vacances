@@ -1,15 +1,103 @@
 .geographie {
-
+  height: 100vh;
 }
 
-.consigne {
-    
+.jeu {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+
+  p {
+    font-family: $textFont;
+    font-size: 2em;
+  }
+  .Pays {
+    color: $geoColor;
+  }
+
+  .questionBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 215px;
+    gap: 50px;
+    background-color: $backGroundColor;
+    border-radius: 20px;
+    padding: 10px 10px;
+  }
+  .boutonSuivantJeu {
+    background-color: $geoColor;
+    border-radius: 35px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    padding: 14px 50px;
+    text-decoration: none;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+  .visible {
+    visibility: visible;
+  }
 }
 
-.reponse-drapeau {
+.drapeau {
+  cursor: pointer;
+  font-size: 8em;
+  width: 150px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bonneReponse {
+  border: 3px solid green;
+}
 
+.mauvaiseReponse {
+  border: 3px solid red;
 }
 
 .reponse-capitale {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: 25%;
+  width: 100%;
 
+  .Capitale {
+    font-family: $titleFont;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 15px;
+    background-color: $white;
+    border: 4px solid $geoColor;
+    height: 50%;
+    width: 25%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .bonneReponse {
+    border: 4px solid green;
+  }
+  .mauvaiseReponse {
+    border: 4px solid red;
+  }
+}
+
+.Consigne {
+  .visibleButton {
+    display: block;
+  }
+
+  .hiddenButton {
+    display: none;
+  }
 }
