@@ -20,11 +20,15 @@ export default function JeuEng() {
   const [choix, setChoix] = useState("");
   const [victoire, setVictoire] = useState(false);
   const [reponses,setReponses]=useState([])
+const [click, setClick] = useState(false)
+
   const handleQuestion = () => {
     index < 9 ? setIndex(index + 1) : setFini(!fini);
     console.log(index);
     console.log(fini);
     setSuivant(!suivant);
+    setClick(false)
+    setVictoire(false)
   };
 
   let images = [
@@ -63,18 +67,9 @@ export default function JeuEng() {
     "Tree",
   ];
 
-  const handleReponse = (e) => {
-    setChoix(e.target.id);
-    if (wrongs.indexOf(choix) === -1) {
-      setVictoire(true);
-    } else {
-      setVictoire(false);
-    }
-  };
 
   useEffect(() => {
-    const temp = [];
-    setVictoire(false);
+    const temp = [];  
     while (temp.length < 2) {
       const rand = Math.floor(Math.random() * mots.length);
 
@@ -96,11 +91,14 @@ export default function JeuEng() {
 
   return (
     <div className="jeuAngl Consigne">
+     {!click && <p>Clique sur le mot qui correspond à l'image !</p>} 
+      {click && victoire && <p>Bravo !</p> }
+      {click && !victoire && <p>Dommage...</p> }
       {fini === false && (
         <ImageEng
           name={images[index].name}
           url={images[index].url}
-          response={images[index].response}
+          response={images[index].response}         
         />
       )}
  <div className="motsBox">
@@ -108,12 +106,19 @@ export default function JeuEng() {
         reponses.map((e) => {
           return (
 
-            <MotAng value={e} bonnereponse={images[index].response}/>
+            <MotAng value={e} 
+            bonnereponse={images[index].response}
+             key={e} 
+             click={click}
+            setClick={setClick}
+            setVictoire={setVictoire}
+            victoire={victoire}
+            />
           );
         })}
-    
+    </div>
 
-      {fini === false && <button onClick={handleQuestion}>Suivant</button>}
+      {fini === false && <button onClick={handleQuestion} className={click? "visible":"hidden"}>Suivant</button>}
 
       {fini && <EndEn />}
     </div>
