@@ -66,18 +66,22 @@
 
 .reponse-capitale {
   display: flex;
+  justify-content: center;
   gap: 30px;
-  height: 125px;
+  height: 25%;
+  width: 100%;
 
   .Capitale {
     font-family: $titleFont;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.5em;
     border-radius: 15px;
-    padding: 0px 40px;
     background-color: $white;
     border: 4px solid $geoColor;
     height: 50%;
+    width: 25%;
+    text-align: center;
+    padding: 0 10px;
   }
 
   .bonneReponse {
