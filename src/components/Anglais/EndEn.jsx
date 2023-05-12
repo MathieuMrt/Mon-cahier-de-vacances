@@ -21,7 +21,7 @@ const EndEn = () => {
       </div>
       <div className="Consigne_container_buttons_endPage">
         <button className="Anglais_button_retourHome" onClick={() => navigate("/")}>Accueil</button>
-        <button className="Anglais_button" >Suivant</button>
+        
       </div>
     </div>
   );
