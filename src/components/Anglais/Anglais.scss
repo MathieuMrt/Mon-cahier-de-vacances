@@ -42,12 +42,7 @@
         display: flex;
         gap: 50px;
 
-        .visible {
-            visibility: visible;
-        }
-        .hidden {
-            visibility: hidden;
-        }
+   
     }
     .reponseAngl {
         background-color: white;
@@ -73,5 +68,11 @@
         font-size: 1.8rem;
         padding: 14px 50px;
         text-decoration: none;
+    }
+    .visible {
+        visibility: visible;
+    }
+    .hidden {
+        visibility: hidden;
     }
 }
