@@ -131,8 +131,8 @@ const [click, setClick] = useState(false)
     </div>
 
       {fini === false && <button onClick={handleQuestion} className={click? "visible":"hidden"}>Suivant</button>}
-
       {fini && <EndEn />}
     </div>
+  
   );
 }
