@@ -1,30 +1,28 @@
-
 .geographie {
   height: 100vh;
 }
 
 .jeu {
-    
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-    justify-content: space-around;
-    height: 100%; 
-   
-    p {
-        font-family: $textFont;
-        font-size: 4em;        
-    }
-    .Pays {        
-        color: $geoColor;
-    }
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
 
-.questionBox {
-display: flex;
-  justify-content: center;
-  height: 215px;
-  gap: 50px;
+  p {
+    font-family: $textFont;
+    font-size: 4em;
+  }
+  .Pays {
+    color: $geoColor;
+  }
+
+  .questionBox {
+    display: flex;
+    justify-content: center;
+    height: 215px;
+    gap: 50px;
   }
   .boutonSuivantJeu {
     background-color: $geoColor;
@@ -45,36 +43,29 @@ display: flex;
   }
 }
 
-.reponse-drapeau { 
-text-align: center;
+.reponse-drapeau {
+  text-align: center;
 
-
-
-.drapeau {       
-        cursor: pointer;
-        font-size: 8em;
-        border-radius: 15px;
-        padding: 0px 40px;   
-        background-color: $white;  
-        
-    }
-    .bonneReponse {
-border: 5px solid green;
-    }
-
+  .drapeau {
+    cursor: pointer;
+    font-size: 8em;
+    border-radius: 15px;
+    padding: 0px 40px;
+    background-color: $white;
+  }
+  .bonneReponse {
+    border: 5px solid green;
+  }
 
   .mauvaiseReponse {
     border: 5px solid red;
   }
-
-
 }
 
 .reponse-capitale {
-
-display: flex;
-gap: 30px;
-height: 215px;
+  display: flex;
+  gap: 30px;
+  height: 215px;
 
   .Capitale {
     font-family: $titleFont;
