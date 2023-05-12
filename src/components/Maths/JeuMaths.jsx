@@ -64,7 +64,8 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
     }
 
     return (
-        <div className="jeu-maths">
+        <div className="Consigne">
+          <div className="jeu-maths">
           <h3>{titleMath}</h3>
           <div className ="question">
             <p>{value1} {calcul} {value2} = </p>
@@ -72,6 +73,7 @@ const JeuMaths = ({setCount, count, handleGameEndMath}) => {
           </div>
           <button className = {`boutonOKJeu ${visibilityOK}`} onClick={handleClickOK}>Valider</button>
           <button className = {`boutonNextJeu ${visibilityNext}`} onClick={handleClickNext}>Suivant</button>
+          </div>
         </div>
     );
 };

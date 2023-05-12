@@ -27,8 +27,13 @@
     display : flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 40%;
     padding-bottom: 10%;
+    font-size: 2.5rem;
+    font-weight: 300;
+
+        h3 {
+            font-weight: 300;
+        }
 
         .question {
             display: flex;
@@ -65,7 +70,17 @@
             display: none;
         }
 
-        .boutonNextJeu, .boutonOKJeu{
+        .boutonNextJeu{
+            background-color: $mathsColor;
+            border-radius: 35px;
+            color: #ffffff;
+            font-family: $titleFont;
+            font-size: 1.8rem;
+            padding: 14px 50px;
+            text-decoration: none;
+        }
+
+        .boutonOKJeu {
             background-color: $mathsColor;
             border-radius: 35px;
             color: #ffffff;
