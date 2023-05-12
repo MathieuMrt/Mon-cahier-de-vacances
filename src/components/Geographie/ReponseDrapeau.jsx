@@ -28,7 +28,7 @@ useEffect(() => {
 
     return (
         <div className ="reponse-drapeau">
-            <button className={`drapeau ${classe}`} onClick={handleClick}>{drapeau}</button>
+            <div className={`drapeau ${classe}`} onClick={handleClick}><img src={drapeau}></img></div>
         </div>
     );
 };
