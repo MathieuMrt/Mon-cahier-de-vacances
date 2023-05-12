@@ -1,7 +1,11 @@
 import sun from "../../assets/images/sun.png";
 import { useNavigate } from "react-router-dom";
+import JSConfetti from 'js-confetti'
 
 const End = () => {
+  const jsConfetti = new JSConfetti()
+
+  jsConfetti.addConfetti()
   const navigate = useNavigate();
   return (
     <div className="Consigne">

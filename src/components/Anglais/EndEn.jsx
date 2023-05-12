@@ -1,6 +1,10 @@
 import ice from "../../assets/images/ice-cream.png";
+import JSConfetti from 'js-confetti'
 
 const EndEn = () => {
+  const jsConfetti = new JSConfetti()
+
+  jsConfetti.addConfetti()
   return (
     <div className="Consigne">
       <img src={ice} alt="coral" className="Consigne_img" />

@@ -1,8 +1,14 @@
 import React from 'react';
 import crabe from "../../assets/images/crabe.png";
 import { useNavigate } from "react-router-dom";
+import JSConfetti from 'js-confetti'
 
 const EndMaths = () => {
+  const jsConfetti = new JSConfetti()
+
+  jsConfetti.addConfetti({
+    emojis: ['⚡️']
+  })
 
   const navigate = useNavigate();
 
